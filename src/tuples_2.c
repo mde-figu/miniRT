@@ -6,12 +6,12 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 18:43:18 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/03/26 11:55:56 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/04/09 14:24:42 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "tuples.h"
+#include "components.h"
 
 
 double	tuple_mag(t_tuple t1)

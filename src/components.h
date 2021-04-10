@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tuples.h                                           :+:      :+:    :+:   */
+/*   components.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/22 23:07:25 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/03/25 10:57:11 by mde-figu         ###   ########.fr       */
+/*   Created: 2021/04/08 20:06:01 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/04/09 18:48:23 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TUPLES_H
-# define TUPLES_H
+#ifndef COMPONENTS_H
+# define COMPONENTS_H
 
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
+
+typedef struct			s_color
+{
+	double				red;
+	double				green;
+	double				brue;
+}						t_color;
 
 typedef struct			s_tuple
 {
@@ -25,6 +32,11 @@ typedef struct			s_tuple
 	int					w;
 }						t_tuple;
 
+t_color	create_color(double red, double green, double blue);
+t_color	add_color(t_color c1, t_color c2);
+t_color	subtract_color(t_color c1, t_color c2);
+t_color	scalar_color(t_color c1, double scale);
+t_color	hadamard_product(t_color c1, t_color c2);
 t_tuple	create_tuple(double x, double y, double z, int w);
 t_tuple	add_tuple(t_tuple t1, t_tuple t2);
 t_tuple	subtract_tuple(t_tuple t1, t_tuple t2);
@@ -35,6 +47,8 @@ float	q_rsqrt(float number);
 t_tuple	tuple_normalize(t_tuple t1);
 t_tuple	quake_normalize(t_tuple t1);
 t_tuple	cross_product(t_tuple t1, t_tuple t2);
+
+
 
 
 #endif

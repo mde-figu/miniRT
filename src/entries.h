@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   colors.h                                           :+:      :+:    :+:   */
+/*   entries.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/25 10:53:45 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/03/25 12:24:11 by mde-figu         ###   ########.fr       */
+/*   Created: 2021/04/09 14:23:16 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/04/09 19:40:34 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef COLORS_H
-# define COLORS_H
+#ifndef ENTRIES_H
+# define ENTRIES_H
 
+#include "src/canvas.h"
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
 
-typedef struct			s_color
+typedef struct			s_initpara
 {
-	double				red;
-	double				green;
-	double				brue;
-}						t_color;
-
-t_color	create_color(double red, double green, double blue);
-t_color	add_color(t_color c1, t_color c2);
-t_color	subtract_color(t_color c1, t_color c2);
-t_color	scalar_color(t_color c1, double scale);
-t_color	hadamard_product(t_color c1, t_color c2);
-
-
-#endif
+	int			res_x;
+	int			res_y;
+	int			num_objects;
+	bool		save;
+	bool		lightonoff;
+	t_color		init_color;
+	t_color		ambient;
+	t_canvas 	*c_canvas;
+	t_light		*lighting;
+	t_objects 	*objects
+	t_imgg		*img;
+	t_imgg		*img_init;
+	void		*mlx;
+	void		*win;
+}

@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   canvas2ppm.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/01 23:00:21 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/04/01 23:05:56 by mde-figu         ###   ########.fr       */
+/*   Created: 2021/02/22 11:36:22 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/02/22 13:40:08 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "colors.h"
-#include "canvas.h"
+#include "libft.h"
 
-int main ()
+t_list		*ft_lstnew(void *content)
 {
-	FILE * fp;
+	t_list *new;
 
-	fp = fopen ("file.txt", "w+");
-	fprintf(fp, "%s %s %s %d", "We", "are", "in", 2012);
-
-	fclose(fp):
-
-	return(0);
+	if (!(new = (t_list *)malloc(sizeof(t_list))))
+	{
+		return (0);
+	}
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }

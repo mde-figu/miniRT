@@ -6,12 +6,12 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 18:43:25 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/03/23 18:43:40 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/04/09 14:24:33 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "tuples.h"
+#include "components.h"
 
 t_tuple	create_tuple(double x, double y, double z, int w)
 {
