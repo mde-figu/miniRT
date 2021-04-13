@@ -3,12 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   validate.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 19:55:47 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/04/09 20:19:49 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/04/11 11:51:25 by mirkios          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+bool	rt_preparser(char *rt_file)
+{
+	char *tmp;
+	bool ret;
+
+	ret = false;
+	tmp = ft_strchr(rt_file, '.');
+	if (ft_memcmp(".rt", temp, 4) == 0)
+		ret = true;
+	return(resp);
+}
 
 bool	validate(int argc, char *argv[])
 {
