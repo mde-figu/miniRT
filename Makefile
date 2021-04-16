@@ -6,7 +6,7 @@
 #    By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/15 18:21:32 by mde-figu          #+#    #+#              #
-#    Updated: 2021/04/15 20:12:55 by mde-figu         ###   ########.fr        #
+#    Updated: 2021/04/16 13:39:09 by mde-figu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,3 +73,12 @@ $(NAME): $(OBJS)
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
 		@mkdir -p objs
+		@$(COMP) $(CFLAGS) $(HEADERS) -c $< -o $@
+		@echo " "$<" was successfully compiled!"
+
+all: $(NAME)
+
+clean:
+		make clean -C $(LIBFT)
+		make clean -C $(GNL)
+		$(RM) $
