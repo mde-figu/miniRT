@@ -6,7 +6,7 @@
 #    By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/15 18:21:32 by mde-figu          #+#    #+#              #
-#    Updated: 2021/04/16 13:39:09 by mde-figu         ###   ########.fr        #
+#    Updated: 2021/04/26 14:49:57 by mde-figu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,4 +81,15 @@ all: $(NAME)
 clean:
 		make clean -C $(LIBFT)
 		make clean -C $(GNL)
-		$(RM) $
+		$(RM) $(OBJS)
+		$(RM) $(OBJ_PATH)
+fclean:
+		clean
+		make fclean -C $(LIBFT)
+		make fclean -C $(GNL)
+		$(RM) $(OBJS)
+		$(RM) $(OBJ_PATH)
+
+re:		fclean all
+
+PHONY:	all clean fclean re

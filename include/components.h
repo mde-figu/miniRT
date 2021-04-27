@@ -6,25 +6,24 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 20:06:01 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/04/09 18:48:23 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/04/26 15:22:01 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef COMPONENTS_H
 # define COMPONENTS_H
+# include <stdio.h>
+# include <string.h>
+# include <math.h>
 
-#include <stdio.h>
-#include <string.h>
-#include <math.h>
-
-typedef struct			s_color
+typedef struct s_color
 {
 	double				red;
 	double				green;
 	double				brue;
 }						t_color;
 
-typedef struct			s_tuple
+typedef struct s_tuple
 {
 	double				x;
 	double				y;
@@ -47,8 +46,5 @@ float	q_rsqrt(float number);
 t_tuple	tuple_normalize(t_tuple t1);
 t_tuple	quake_normalize(t_tuple t1);
 t_tuple	cross_product(t_tuple t1, t_tuple t2);
-
-
-
 
 #endif
