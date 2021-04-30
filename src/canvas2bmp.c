@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/06 11:43:45 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/04/08 20:05:54 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/04/27 16:03:38 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,8 @@
 
 // BMP_HEADER
 
-void
-bmp_header_init_df (bmp_header *header,
-					const int   width,
-					const int   height)
+void	bmp_header_init_df (bmp_header *header,
+					const int width, const int height)
 {
 	header->bfSize = (sizeof (bmp_pixel) * width + BMP_GET_PADDING (width))
 						* abs (height);

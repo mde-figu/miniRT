@@ -6,14 +6,15 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 12:25:14 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/04/01 18:51:04 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/04/27 16:02:03 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "colors.h"
 #include "canvas.h"
 
-t_canvas		write_pixel(t_canvas canvas, int width, int height, t_color color_init)
+t_canvas	write_pixel(t_canvas canvas,
+						int width, int height, t_color color_init)
 {
 	canvas.pixel[width][height].red = color_init.red;
 	canvas.pixel[width][height].green = color_init.green;

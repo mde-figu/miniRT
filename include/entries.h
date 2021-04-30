@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 14:23:16 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/04/26 15:32:31 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/04/27 16:27:34 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_initpara
 	int			res_x;
 	int			res_y;
 	int			num_objects;
-	bool		save;
+	int			save;
 	bool		lightonoff;
 	t_color		init_color;
 	t_color		ambient;
