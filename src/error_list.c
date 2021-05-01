@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 14:55:01 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/04/30 18:47:21 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/04/30 20:23:00 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,8 @@ void		error_list(int error_nbr)
 		printf("could not add tuple, W parameter is wrong\n");
 	if (error_nbr == 20)
 		printf("Invalid code in .rt file, use:R,A,c,l,pl,sp,sq,cy or tr")
+	if (error_nbr == 21)
+		printf("The resolution prameters must total 3: R Width Height")
+	if (error_nbr == 21)
+		printf("The resolution prameters Width and Height must be numbers")
 }
