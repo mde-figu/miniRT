@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_list.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 14:55:01 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/04/30 20:23:00 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/05/01 14:13:56 by mirkios          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@ void		error_list(int error_nbr)
 		printf("Invalid code in .rt file, use:R,A,c,l,pl,sp,sq,cy or tr")
 	if (error_nbr == 21)
 		printf("The resolution prameters must total 3: R Width Height")
-	if (error_nbr == 21)
+	if (error_nbr == 22)
 		printf("The resolution prameters Width and Height must be numbers")
+	if (error_nbr == 23)
+		printf("The ambient light must have 3 parameters: A, x size, y size")
+	if (error_nbr == 24)
+		printf("The parameters value for ambient light must be 0.0 ~ 1.0")
 }
