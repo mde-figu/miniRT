@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_entry.c                                       :+:      :+:    :+:   */
+/*   validate_cam.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/30 19:26:48 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/04 09:59:04 by mde-figu         ###   ########.fr       */
+/*   Created: 2021/05/03 13:31:40 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/05/05 17:03:58 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/entries.h"
 
-int	free_entry(char ***entry)
+int		validate_cam(char **entry_t)
 {
-	char	**tmp;
-	int		i;
-
-	i = 0;
-	tmp = *entry;
-	while (tmp[i] != NULL)
-	{
-		free(tmp[i]);
-		tmp[i] = NULL;
-		i++;
-	}
-	free(tmp);
-	tmp = NULL;
-	return (0);
+	if (ft_str_dlen(entry_t) != 4)
+		return (error_list(25));
+	if (!check_coordinate(entry_t[1]))
+		return (error_list(26));
+	if (!check_normal(entry_t[2]))
+		return (error_list(27));
+	if (!is_num(entry_t[3]))
+		return (error_list(28));
+	if (atof(entry_t[3]) < 0 || atof(entry_t[3]) > 180)
+		return (error_list(28));
+	return (1);
 }

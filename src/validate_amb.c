@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validate_amb.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 13:29:37 by mirkios           #+#    #+#             */
-/*   Updated: 2021/05/01 21:21:17 by mirkios          ###   ########.fr       */
+/*   Updated: 2021/05/03 14:08:13 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int validate_amb(char **entry_t)
         error_list(23);
         return (0);
     }
-    if (!ft_isdigit(*entr_t[1]) || atof(entry_t) < 0 || atof(entry_t) > 1)
+    if (!ft_isdigit(*entry_t[1]) || atof(entry_t) < 0 || atof(entry_t) > 1)
     {
         error_list(24);
         return (0);

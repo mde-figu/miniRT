@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_entry.c                                       :+:      :+:    :+:   */
+/*   check_coordinate.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/30 19:26:48 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/04 09:59:04 by mde-figu         ###   ########.fr       */
+/*   Created: 2021/05/05 17:03:10 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/05/05 17:04:11 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/entries.h"
 
-int	free_entry(char ***entry)
+int		check_coordinate(char *str)
 {
 	char	**tmp;
-	int		i;
 
-	i = 0;
-	tmp = *entry;
-	while (tmp[i] != NULL)
+	tmp = ft_split(str, ',');
+	if (ft_str_dlen(tmp) != 3)
 	{
-		free(tmp[i]);
-		tmp[i] = NULL;
-		i++;
+		free_entry(&tmp);
+		return(0);
 	}
-	free(tmp);
-	tmp = NULL;
-	return (0);
+	if (!is_num(tmp[0]) || !is_num(tmp[1]) || !is_num(tmp[2]))
+	{
+		free_entry(&tmp);
+		return (0);
+	}
+	free_entry(&tmp);
+	return(1);
 }
