@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_list.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 14:55:01 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/07 20:14:58 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/05/08 13:36:57 by mirkios          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,43 @@ int		error_list(int error_nbr)
 		printf("Plane has an invalid color");
 	if (error_nbr == 37)
 		printf("Spheres must have 4 parameters: sp, its coordinates, its diameter, and its color");
+	if (error_nbr == 38)
+		printf("Sphere has an invalid coordinate");
+	if (error_nbr == 39)
+		printf("Sphere's third parameter, its diameter, must be a number");
+	if (error_nbr == 40)
+		printf("Sphere's diameter mustn't be negative");
+	if (error_nbr == 41)
+		printf("Sphere's color is invalid");
+	if (error_nbr == 42)
+		printf("Squares must have 5 parameters: sq, its coordinates, its norma, side size and color");
+	if (error_nbr == 43)
+		printf("Square's coordinates are invalid");
+	if (error_nbr == 44)
+		printf("Square's normal are invalid");
+	if (error_nbr == 45)
+		printf("Square's side must be a number");
+	if (error_nbr == 46)
+		printf("Square's side must be positive");
+	if (error_nbr == 47)
+		printf("Square's color is invalid");
+	if (error_nbr == 48)
+		printf("Cylinders mmust have 6 parameters: cy, its coordinates, its normal vector, its diameter, its height, and its color");
+	if (error_nbr == 49)
+		printf("Cylinder's diameter must be a positive number");
+	if (error_nbr == 50)
+		printf("Cylinder's diameter must be a number");
+	if (error_nbr == 51)
+		printf("Cylinder's color is invalid");
+	if (error_nbr == 52)
+		printf("Cylinder's normal vector is invalid");
+	if (error_nbr == 53)
+		printf("Cylinder's diameter must be a number");
+	if (error_nbr == 54)
+		printf("Triangles must contain 5 parameters: tr, its vertexes coordinates and its color");
+	if (error_nbr == 55)
+		printf("Triangle coordinates are invalid")
+	if (error_nbr == 56)
+		printf("Triangle color is invalid");
 	return (0);
 }
