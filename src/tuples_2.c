@@ -6,11 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 18:43:18 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/04/27 15:45:18 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/05/15 19:02:20 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "components.h"
+#include "../include/components.h"
 
 double	tuple_mag(t_tuple t1)
 {

@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 14:23:16 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/04/27 16:27:34 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/05/11 14:18:13 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,13 @@ typedef struct s_initpara
 	void		*mlx;
 	void		*win;
 }				t_initpara;
+
+typedef struct s_line_fd
+{
+	int		fd;
+	int		ii;
+	char	*line;
+}				t_line_fd;
 
 bool	validate(int argc, char *argv[]);
 bool	rt_preparser(char *rt_file);

@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 20:06:01 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/08 21:36:43 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/05/11 21:20:42 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,12 @@ typedef struct s_world
 	int					has_light;
 	int					num_objects;
 }						t_world;
+
+typedef struct s_matrix
+{
+	float				**element;
+	int					dim;
+}						t_matrix;
 
 t_color	create_color(double red, double green, double blue);
 t_color	add_color(t_color c1, t_color c2);

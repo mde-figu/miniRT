@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   readnparse.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 12:09:58 by mirkios           #+#    #+#             */
-/*   Updated: 2021/05/01 13:26:04 by mirkios          ###   ########.fr       */
+/*   Updated: 2021/05/11 15:31:52 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "include/components.h"
 #include "include/parameters.h"
 
-static	void	init_para(t_initpara *initpara)
+static	void	init_para(t_initpara *initpara, t_line_fd *l)
 {
 	t_initpara->cams = NULL;
 	t_initpara->lighting = NULL;
@@ -23,33 +23,41 @@ static	void	init_para(t_initpara *initpara)
 	t_initpara->canvas = NULL;
 	t_initpara->img = NULL;
 	t_initpara->img_init = NULL;
+	l->line = NULL;
 
+}
+
+static int	ft_aux(char *line, t_initpara *initpara)
+{
+	if (line != NULL && *line != '\0')
+	{
+		if (!validate_line(line))
+			return (0);
+		conf_parameters(&config, line);
+		free(line);
+	}
+	return (1);
 }
 
 int	readfile(t_initpara *initpara, char *[])
 {
-	int		fd;
-	int		hasline;
-	int		obj_num;
-	char	*entry;
+	t_line_fd l;
 
-	entry = NULL;
-	init_para(initpara);
-	if (!(fd = open(argv[1], O_RDONLY)))
+	init_para(initpara, &l);
+	l.fd = open(argv[1], O_RDONLY);
+	if (!l.fd)
 		error_list(0);
-	obj_num = 0;
-	while ((hasline = get_next_line(fd, &entry)) > 0)
+	l.ii = get_next_line(p.fd, &p.line)
+	while ((l.line > 0)
 	{
-		if ((entry != NULL && *entry != '\0' && *entry != '#')
-			|| (entry != NULL && *entry != '\0'))
+		if (l.line != NULL && *l.line != '\0' && *l.line != '#')
 		{
 			if(!validate_line(entry))
 				return(false);
-			initiate_parameters(&initpara, entry, obj_num);
+			conf_parameters(&initpara, entry, obj_num);
 			free(entry);
 		}
-		obj_num++;
+		l.ii = get_next_line(l.fd, &l.line)
 	}
-	obj_num++;
-	return(true);
+	return(ft_aux(l.line, initpara)
 }

@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 13:41:29 by mirkios           #+#    #+#             */
-/*   Updated: 2021/05/08 21:52:03 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/05/11 00:12:59 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,16 @@ void	set_world(t_world *world, t_initpara initpara)
 		world(world, tmp->content);
 		tmp = tmp->next;
 	}
+	world(world, tmp->content);
+	tmp_l = initpara.lighting;
+	if (tmp_l != NULL)
+	{
+		while (tmp_l->next)
+		{
+			create_light(world, tmp_l);
+			tmp_l = tmp_l->next;
+		}
+		create_light(world, tmp_l->content);
+	}
+	world->ambient = initpara.init_color;
 }
