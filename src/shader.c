@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 14:29:06 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/28 14:09:15 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/05/28 20:24:54 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,4 +87,10 @@ t_color		shadding(t_initpara w, t_comps comp)
 	}
 	else
 		return (w.ambient);
+}
+
+t_tuple	reflect(t_tuple in, t_tuple normal)
+{
+	return (subtract_tuple(in,
+			scalar_tuple(normal, 2 * dot_product(int, normal))));
 }

@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 13:34:15 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/28 20:09:09 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/05/28 20:26:26 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ t_light	point_light(t_tuple position, t_color intensity)
 static void	ft_int(t_reflexpar *q, t_colcomp p, double *light_dot_normal)
 {
 	q->black = create_color(0, 0, 0);
-	q->effective_color = multicolor_v(p.material.color, p.light.intensity);
+	q->effective_color = hadamard_product(p.material.color, p.light.intensity);
 	q->lightv = quake_normalize(subtract_tuple(p.light.position, p.position));
-	q->ambient = multicolor_s(q->effective_color, p.material.ambient);
+	q->ambient = scalar_color(q->effective_color, p.material.ambient);
 	q->ambient = add_color(q->ambient, p.a);
 	*light_dot_normal = dot_product(q->lightv, p.normalv);
 }
@@ -49,10 +49,10 @@ static void	ft_int(t_reflexpar *q, t_colcomp p, double *light_dot_normal)
 static void	ft_aux(t_reflexpar *q, t_colcomp *p, double *light_dot_normal,
 					t_reflex *y)
 {
-	q->diffuse = multicolor_s(q->effective_color,
+	q->diffuse = scalar_color(q->effective_color,
 			p->material.diffuse * *light_dot_normal);
-	q->reflectv = reflect(multi(q->lightv, -1), p->normalv);
-	y->reflect_dot_eye = dot(q->reflectv, p->eyev);
+	q->reflectv = reflect(scalar_tuple(q->lightv, -1), p->normalv);
+	y->reflect_dot_eye = dot_product(q->reflectv, p->eyev);
 	if (y->reflect_dot_eye <= 0)
 	{
 		q->specular = q->black;
@@ -60,7 +60,7 @@ static void	ft_aux(t_reflexpar *q, t_colcomp *p, double *light_dot_normal,
 	else
 	{
 		y->factor = ft_pow(y->reflect_dot_eye, p->material.shininess);
-		q->specular = multicolor_s(p->light.intensity,
+		q->specular = scalar_color(p->light.intensity,
 				p->material.specular * y->factor);
 	}
 }
