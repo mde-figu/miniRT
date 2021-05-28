@@ -1,39 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tuples_3.c                                         :+:      :+:    :+:   */
+/*   rays_1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/15 19:02:07 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/21 18:35:31 by mde-figu         ###   ########.fr       */
+/*   Created: 2021/05/19 21:58:39 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/05/27 12:17:51 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/components.h"
+#include "../include/canvas.h"
 
-t_tuple create_point(double x, double y, double z)
+t_ray	ray(t_tuple origin, t_tuple direction)
 {
-	t_tuple	p;
+	t_ray	r;
 
-	p.x = x;
-	p.y = y;
-	p.z = z;
-	p.w = 1;
+	r.origin = origin;
+	r.direction = direction;
+	return (r);
+}
+
+
+t_tuple	posit(t_ray ray, double t)
+{
+	t_tuple p;
+
+	p = add_tuple(ray.origin, scale_tuple(ray.direction, t));
 	return (p);
-}
-
-t_tuple create_vector(double x, double y, double z)
-{
-	t_tuple v;
-	v.x = x;
-	v.y = y;
-	v.z = z;
-	v.w = 0;
-	return (v);
-}
-
-double dot_product(t_tuple i, t_tuple j)
-{
-	return (i.x * j.x + i.y * j.y + i.z * j.z + i.w * j.w);
 }

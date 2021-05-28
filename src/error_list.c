@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_list.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 14:55:01 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/08 13:36:57 by mirkios          ###   ########.fr       */
+/*   Updated: 2021/05/20 12:11:08 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,5 +108,7 @@ int		error_list(int error_nbr)
 		printf("Triangle coordinates are invalid")
 	if (error_nbr == 56)
 		printf("Triangle color is invalid");
+	if (error_nbr == 57)
+		printf("Canvas error: A matrix is not invertible");
 	return (0);
 }

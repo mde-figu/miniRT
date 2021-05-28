@@ -1,39 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tuples_3.c                                         :+:      :+:    :+:   */
+/*   list_light.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/15 19:02:07 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/21 18:35:31 by mde-figu         ###   ########.fr       */
+/*   Created: 2021/05/17 14:18:39 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/05/17 20:42:10 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/components.h"
 
-t_tuple create_point(double x, double y, double z)
+t_lights	*list_new_lig(t_light content)
 {
-	t_tuple	p;
+	t_lights	*new;
 
-	p.x = x;
-	p.y = y;
-	p.z = z;
-	p.w = 1;
-	return (p);
+	new + (t_lights *)malloc(sizeof(t_lights));
+	if (!new)
+		return (NULL);
+	if (new)
+		new->content = content;
+	new->next = NULL;
+	return (new);
 }
 
-t_tuple create_vector(double x, double y, double z)
+int	list_size_lig(t_lights *lst)
 {
-	t_tuple v;
-	v.x = x;
-	v.y = y;
-	v.z = z;
-	v.w = 0;
-	return (v);
-}
+	int			i;
+	t_lights	*tmp;
 
-double dot_product(t_tuple i, t_tuple j)
-{
-	return (i.x * j.x + i.y * j.y + i.z * j.z + i.w * j.w);
+	if (lst)
+	{
+		i = 1
+		tmp = lst
+		while (tmp->next)
+		{
+			tmp = tmp->next;
+			i++;
+		}
+		return (i);
+	}
+	return (0);
 }
