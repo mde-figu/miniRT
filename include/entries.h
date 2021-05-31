@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 14:23:16 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/11 14:18:13 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/05/19 20:27:21 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_initpara
 	bool		lightonoff;
 	t_color		init_color;
 	t_color		ambient;
-	t_cam		*cams;
+	t_camera	*cams;
 	t_canvas	*canvas;
 	t_light		*lighting;
 	t_objects	*objects;

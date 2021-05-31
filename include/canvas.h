@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 16:00:31 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/04/27 14:20:41 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/05/24 13:23:37 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,101 @@ typedef struct s_color
 	double				green;
 	double				brue;
 }						t_color;
+
+typedef struct s_material
+{
+	t_color				color;
+	double				ambient;
+	double				diffuse;
+	double				specular;
+	double				shininess;
+}						t_material;
+
+typedef struct s_canvas
+{
+	int					width;
+	int					height;
+	t_color				**pixel;
+}						t_canvas;
+
+typedef struct s_canvasl
+{
+	t_canvas			content;
+	struct s_canvasl	*next;
+}						t_canvasl;
+
+typedef struct s_beamoffset
+{
+	t_ray				r;
+	double				xoffset;
+	double				yoffset;
+	double				world_x;
+	double				world_y;
+}						t_beamoffset;
+
+typedef struct s_ray
+{
+	t_tuple				origin;
+	t_tuple				direction;
+}						t_ray;
+
+typedef struct s_intersect
+{
+	double				t;
+	t_object			object;
+	bool				valid;
+}						t_intersect;
+
+typedef struct s_sphinter
+{
+	t_intersection		i1;
+	t_intersection		i2;
+	t_tuple				sphere_to_ray;
+	t_tuple				p;
+	double				discriminant;
+	t_matrix			inv;
+}						t_sphinter;
+
+typedef struct s_trinter
+{
+	t_intersection		i1;
+	double				det;
+	double				f;
+	double				u;
+	double				v;
+	double				t;
+}						t_trinter;
+
+typedef struct s_cyinter
+{
+	double				a;
+	double				b;
+	double				c;
+	double				t0;
+	double				t1;
+	double				temp;
+	double				y0;
+	double				y1;
+	double				discriminant;
+	t_intersection		i1;
+	int					cc;
+}						t_cyinter;
+
+typedef struct s_capinter
+{
+	t_list				*xs;
+	t_list				*xs_cap;
+}						t_capinter;
+
+typedef struct s_camera
+{
+	int					hsize;
+	int					vsize;
+	double				field_of_view;
+	t_matrix			transform;
+	double				half_width;
+	double				half_height;
+	double				pixel_size;
+}						t_camera;
 
 #endif

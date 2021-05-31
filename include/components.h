@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 20:06:01 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/11 21:20:42 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/05/19 22:07:15 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,15 @@ typedef struct s_world
 
 typedef struct s_matrix
 {
-	float				**element;
+	double				**element;
 	int					dim;
 }						t_matrix;
+
+typedef struct s_coord
+{
+	int					i;
+	int					j;
+}						t_coord;
 
 t_color	create_color(double red, double green, double blue);
 t_color	add_color(t_color c1, t_color c2);
