@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 14:23:16 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/19 20:27:21 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/03 17:04:40 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,3 +49,5 @@ typedef struct s_line_fd
 
 bool	validate(int argc, char *argv[]);
 bool	rt_preparser(char *rt_file);
+bool	float_compare(float a, float b, float epsilon);
+int		error_list(int error_nbr);

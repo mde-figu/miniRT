@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 21:16:49 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/28 20:05:13 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/05/31 16:18:56 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ typedef struct s_comps
 	t_tuple				point;
 	t_tuple				eyev;
 	t_tuple				normalv;
-	boobl				inside;
+	bool				inside;
 	t_tuple				over_point;
 }						t_comps;
 

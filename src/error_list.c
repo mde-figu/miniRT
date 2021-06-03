@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 14:55:01 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/20 12:11:08 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/03 16:56:13 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,5 +110,11 @@ int		error_list(int error_nbr)
 		printf("Triangle color is invalid");
 	if (error_nbr == 57)
 		printf("Canvas error: A matrix is not invertible");
+	if (error_nbr == 58)
+		printf("No cameras defined")
+	if (error_nbr == 59)
+		printf("No objects defined")
+	if (error_nbr == 60)
+		printf("Error creating .bmp")
 	return (0);
 }

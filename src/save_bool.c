@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   save.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/09 18:10:01 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/03 16:58:24 by mde-figu         ###   ########.fr       */
+/*   Created: 2021/04/27 16:19:22 by mde-figu          #+#    #+#             */
+/*   Updated: 2021/04/27 16:24:45 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/entries.h"
+#include "entries.h"
 
-int		main(int argc, char *argv[])
+int	save_on(int argc)
 {
-	t_initpara initpara;
+	int	ret;
 
-	splash();
-	validate(argc, argv);
-	initpara.save = save_on(argc);
-	readfile(&initpara, argv);
-	//intro goes here
-	if (initpara.objects != NULL)
-		set_world(&initpara);
-	make_canvas(&initpara);
-	load_screen(initpara);
-	return (0);
+	ret = 0;
+	if (argc == 3)
+		ret = 1;
+	return (ret);
 }
