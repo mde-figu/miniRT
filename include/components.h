@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 20:06:01 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/19 22:07:15 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/03 17:09:57 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 # include <stdio.h>
 # include <string.h>
 # include <math.h>
+# include "canvas.h"
+# include "entries.h"
+# include "parameters.h"
 
 typedef struct s_color
 {

@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 16:00:31 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/24 13:23:37 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/03 17:09:39 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <string.h>
 # include <math.h>
 # include <stdlib.h>
+# include "entries.h"
+# include "components.h"
+# include "parameters.h"
 
 typedef struct s_bmpheader
 {
