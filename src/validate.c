@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 19:55:47 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/04/30 19:02:57 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/03 17:42:11 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,34 +22,6 @@ bool	rt_preparser(char *rt_file)
 	if (ft_memcmp(".rt", temp, 4) == 0)
 		ret = true;
 	return(resp);
-}
-
-bool	validate(int argc, char *argv[])
-{
-	char		*error;
-
-	error = NULL;
-	if (argc < 2)
-	{
-		error_list(1);
-		return	(true);
-	}
-	if (argc > 3)
-	{
-		error_list(2);
-		return	(true);
-	}
-	if (!rt_preparser(argv[1]))
-	{
-		error_list(3);
-		return	(true);
-	}
-	if (argc == 3 && ft_memcmp("--save", argv[2],7) != 0)
-	{
-		error_list(4);
-		return	(true);
-	}
-	return(false);
 }
 
 static int	validate_config(char **entry_t)
@@ -95,4 +67,32 @@ int	validate_line(char *entry)
 		error_list(20);
 	free_entry(&entry_t);
 	return (ret);
+}
+
+bool	validate(int argc, char *argv[])
+{
+	char		*error;
+
+	error = NULL;
+	if (argc < 2)
+	{
+		error_list(1);
+		return	(true);
+	}
+	if (argc > 3)
+	{
+		error_list(2);
+		return	(true);
+	}
+	if (!rt_preparser(argv[1]))
+	{
+		error_list(3);
+		return	(true);
+	}
+	if (argc == 3 && ft_memcmp("--save", argv[2],7) != 0)
+	{
+		error_list(4);
+		return	(true);
+	}
+	return(false);
 }

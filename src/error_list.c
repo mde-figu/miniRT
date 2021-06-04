@@ -6,11 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 14:55:01 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/03 16:56:13 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/03 17:31:16 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "entries.h"
+#include "../include/entries.h"
 
 int		error_list(int error_nbr)
 {

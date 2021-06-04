@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 14:23:16 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/03 17:04:40 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/04 15:33:59 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 # include "../libft/libft.h"
 # include "../get_next_line/get_next_line_bonus.h"
 # include "canvas.h"
-# include "components.h"
 # include "parameters.h"
+# include "components.h"
+# include <stdbool.h>
 # include <stdio.h>
 # include <string.h>
 # include <math.h>
@@ -47,7 +48,17 @@ typedef struct s_line_fd
 	char	*line;
 }				t_line_fd;
 
+int		error_list(int error_nbr);
 bool	validate(int argc, char *argv[]);
 bool	rt_preparser(char *rt_file);
+int		validate_res(char **entry_t);
+int		validate_amb(char **entry_t);
+int		validate_cam(char **entry_t);
+int		str_ptr_len(char **s);
+int		validate_light(char **entry_t);
+int		validate_plane(char **entry_t);
+int		validate_sphere(char **entry_t);
+int		validate_square(char **entry_t);
 bool	float_compare(float a, float b, float epsilon);
-int		error_list(int error_nbr);
+
+#endif

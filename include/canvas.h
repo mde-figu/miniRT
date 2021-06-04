@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 16:00:31 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/03 17:09:39 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/03 17:16:01 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -181,5 +181,6 @@ typedef struct s_camera
 	double				half_height;
 	double				pixel_size;
 }						t_camera;
+
 
 #endif
