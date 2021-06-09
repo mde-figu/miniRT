@@ -6,7 +6,7 @@
 #    By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/03 20:08:17 by mde-figu          #+#    #+#              #
-#    Updated: 2021/06/03 20:10:52 by mde-figu         ###   ########.fr        #
+#    Updated: 2021/06/06 19:23:03 by mde-figu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,6 @@ LIBFT_NAME = libft.a
 MLX_NAME = libmlx_Linux.a
 NAME = miniRT
 MAIN = main.c
-FILE = minimalist.rt
 
 LIB = $(LIB_PATH)/$(LIB_NAME)
 LIBFT = $(LIBFT_PATH)/$(LIBFT_NAME)

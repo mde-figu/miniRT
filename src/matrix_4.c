@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 13:13:35 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/27 13:55:52 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/06 20:19:32 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,5 +116,3 @@ t_matrix	rotation_z(double r)
 	write_matrix(&a, 3, 3, 1.0);
 	return (a);
 }
-
-

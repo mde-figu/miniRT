@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 13:31:40 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/03 19:50:44 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/06 22:26:35 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		validate_cam(char **entry_t)
 {
-	if (ft_str_dlen(entry_t) != 4)
+	if (str_ptr_len(entry_t) != 4)
 		return (error_list(25));
 	if (!check_coordinate(entry_t[1]))
 		return (error_list(26));

@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 17:03:10 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/05 17:04:11 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/06 20:55:40 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		check_coordinate(char *str)
 	char	**tmp;
 
 	tmp = ft_split(str, ',');
-	if (ft_str_dlen(tmp) != 3)
+	if (str_ptr_len(tmp) != 3)
 	{
 		free_entry(&tmp);
 		return(0);

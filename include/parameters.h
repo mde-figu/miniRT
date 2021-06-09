@@ -6,19 +6,17 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 21:16:49 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/03 20:21:32 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/08 01:06:02 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PARAMETERS_H
 # define PARAMETERS_H
 
-#include "components.h"
+#include "entries.h"
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
-#include "canvas.h"
-#include "entries.h"
 
 
 typedef struct s_obj_par
@@ -98,14 +96,11 @@ typedef struct s_colcomp
 	t_tuple				eyev;
 	t_tuple				normalv;
 	bool				in_shadow;
-}						t_colcomp
+}						t_colcomp;
 
-typedef struct s_shadepar
-{
-	t_initpara			world;
-	t_comps				comps;
-	bool				shadowed;
-}						t_shadepar
+int			str_ptr_len(char **s);
+t_color		lighting(t_colcomp p);
+double		atof(const char *nptr);
 
 
 #endif

@@ -6,11 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 11:00:10 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/03/25 12:19:42 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/06 19:27:26 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "colors.h"
+#include "../include/entries.h"
 
 t_color	create_color(double red, double green, double blue)
 {

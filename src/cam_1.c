@@ -6,11 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 14:34:49 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/16 16:58:32 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/06 20:04:18 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/canvas"
+#include "../include/entries.h"
 
 void	cameras(t_cameras **l, t_camera c)
 {

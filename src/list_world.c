@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_size_world.c                                  :+:      :+:    :+:   */
+/*   list_world.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 21:39:24 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/08 21:45:58 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/07 00:39:27 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,19 @@ int	list_size_world(t_objects *lst)
 		}
 		return (i);
 	}
-	return (0);
+	else
+		return (0);
+}
+
+t_objects	*list_new_world(t_object content)
+{
+	t_objects	*new;
+
+	new = (t_objects *)malloc(sizeof(t_objects));
+	if (!new)
+		return (NULL);
+	if (new)
+		new->content = content;
+	new->next = NULL;
+	return (new);
 }

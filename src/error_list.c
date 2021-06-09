@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 14:55:01 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/03 17:31:16 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/06 19:16:40 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,24 @@
 
 int		error_list(int error_nbr)
 {
-	int		i;
-	int		fd;
-	char	*fil;
-	char	*error_str;
+	//int		i;
+	//int		fd;
+	//char	*fil;
+	//char	*error_str;
 
 	if (error_nbr == 0)
 	{
-		printf(" .rt file is empty")
+		printf(" .rt file is empty");
 		exit(0);
 	}
 	if (error_nbr == 1)
-		printf("Too few arguments!\n", );
+		printf("Too few arguments!\n");
 	if (error_nbr == 2)
-		printf("Too many arguments!\n", );
+		printf("Too many arguments!\n");
 	if (error_nbr == 3)
-		printf(".rt file is wrong or its data is corrupted\n", );
+		printf(".rt file is wrong or its data is corrupted\n");
 	if (error_nbr == 4)
-		printf("wrong spacing on second argument, check syntax\n", );
+		printf("wrong spacing on second argument, check syntax\n");
 	if (error_nbr == 10)
 		printf("could not add tuple, W parameter is wrong\n");
 	if (error_nbr == 20)
@@ -105,16 +105,16 @@ int		error_list(int error_nbr)
 	if (error_nbr == 54)
 		printf("Triangles must contain 5 parameters: tr, its vertexes coordinates and its color");
 	if (error_nbr == 55)
-		printf("Triangle coordinates are invalid")
+		printf("Triangle coordinates are invalid");
 	if (error_nbr == 56)
 		printf("Triangle color is invalid");
 	if (error_nbr == 57)
 		printf("Canvas error: A matrix is not invertible");
 	if (error_nbr == 58)
-		printf("No cameras defined")
+		printf("No cameras defined");
 	if (error_nbr == 59)
-		printf("No objects defined")
+		printf("No objects defined");
 	if (error_nbr == 60)
-		printf("Error creating .bmp")
+		printf("Error creating .bmp");
 	return (0);
 }

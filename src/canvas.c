@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 12:25:14 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/01 20:28:36 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/06 19:57:33 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void		arrange_pixels(t_data *data, int x, int y, int color)
 	*(unsigned int *)dst = color;
 }
 
-t_canvas	write_pixel(t_canvas canvas,
+t_canvas	write_pixel(t_canvas *canvas,
 						int width, int height, t_color color_init)
 {
 	canvas.pixel[width][height].red = color_init.red;

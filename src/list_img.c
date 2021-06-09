@@ -6,11 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 20:30:41 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/01 20:34:38 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/06 21:54:14 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/canvas.h"
+#include "../include/entries.h"
 
 int	lst_size_img(t_imgg *img)
 {
@@ -32,7 +32,7 @@ int	lst_size_img(t_imgg *img)
 		return (0);
 }
 
-t_imgg	*ft_lstnew_img(t_data img)
+t_imgg	*list_new_img(t_data img)
 {
 	t_imgg	*new;
 
@@ -45,7 +45,7 @@ t_imgg	*ft_lstnew_img(t_data img)
 	return (new);
 }
 
-void	ft_lstclear_img(t_imgg **img)
+void	list_clear_img(t_imgg **img)
 {
 	t_imgg	*current;
 	t_imgg	*next;

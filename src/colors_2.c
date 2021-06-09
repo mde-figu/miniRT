@@ -6,11 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 19:00:28 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/01 20:12:24 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/08 01:01:15 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/components.h"
+#include "../include/entries.h"
 
 int				color_bool(double a)
 {

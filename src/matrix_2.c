@@ -6,11 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 11:13:09 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/19 22:52:27 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/06 20:50:36 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/components.h"
+#include "../include/entries.h"
 
 t_matrix	translation(double x, double y, double z)
 {
@@ -59,12 +59,14 @@ t_matrix	scaling(double x, double y, double z)
 	write_matrix(&a, 3, 3, 1.0);
 }
 
-t_ray	transform(t_ray r, t_matrix m)
+double	cofactor(t_matrix a, int i, int j)
 {
-	t_ray	ret;
+	double	ret;
 
-	ret.origin = matrix_x_vector(m, r.origin);
-	ret.direction = matrix_x_vector(m, r.direction);
+	ret = 0;
+	ret = matrix_minor(a, i, j);
+	if ((i + j) % 2 != 0)
+		ret = -1 * ret;
 	return (ret);
 }
 
@@ -88,7 +90,7 @@ t_matrix	inverse(t_matrix a)
 			p.j = -1;
 			while (++(p.j) < a.dim)
 			{
-				c = minor(a, p.i, p.j);
+				c = matrix_minor(a, p.i, p.j);
 				b.element[p.j][p.i] = c / d;
 			}
 		}

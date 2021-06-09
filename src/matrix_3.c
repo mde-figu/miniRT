@@ -6,11 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 22:29:51 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/27 11:53:54 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/06 20:50:20 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/components.h"
+#include "../include/entries.h"
 
 t_matrix	submatrix(t_matrix a, int i, int j)
 {
@@ -41,7 +41,7 @@ t_matrix	submatrix(t_matrix a, int i, int j)
 	return (b);
 }
 
-double	minor(t_matrix a, int i, int j)
+double	matrix_minor(t_matrix a, int i, int j)
 {
 	t_matrix	b;
 	double		d;
@@ -52,14 +52,12 @@ double	minor(t_matrix a, int i, int j)
 	return (d);
 }
 
-double	cofactor(t_matrix a, int i, int j)
+t_ray	transform(t_ray r, t_matrix m)
 {
-	double	ret;
+	t_ray	ret;
 
-	ret = 0;
-	ret = minor(a, i, j);
-	if ((i + j) % 2 != 0)
-		ret = -1 *ret;
+	ret.origin = matrix_x_vector(m, r.origin);
+	ret.direction = matrix_x_vector(m, r.direction);
 	return (ret);
 }
 

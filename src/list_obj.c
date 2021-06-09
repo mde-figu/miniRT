@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 19:39:00 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/15 19:55:32 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/07 00:01:34 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	list_size_obj(t_objects *lst)
 		return (0);
 }
 
-void	list_obj(t_objects **l, t_objects o)
+void	list_obj(t_objects **l, t_object o)
 {
 	t_objects	*tmp;
 

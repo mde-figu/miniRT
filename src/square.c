@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 19:21:39 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/19 19:22:56 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/06 20:51:48 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_object	square(void)
 
 	p.id = 4;
 	p.type = "square";
-	p.center = create_point(0, 0, 0);
+	p.center = create_tuple(0, 0, 0, 1);
 	p.transform = identity();
 	p.material.color = create_color(1, 1, 1);
 	p.material.ambient = 0.1;
@@ -28,11 +28,11 @@ t_object	square(void)
 	p.minimum = -INFINITY;
 	p.maximum = INFINITY;
 	p.closed = false;
-	p.p1 = create_point(0, 0, 0);
-	p.p2 = create_point(0, 0, 0);
-	p.p3 = create_point(0, 0, 0);
-	p.e1 = create_point(0, 0, 0);
-	p.e2 = create_point(0, 0, 0);
-	p.normal = create_point(0, 0, 0);
+	p.p1 = create_tuple(0, 0, 0, 1);
+	p.p2 = create_tuple(0, 0, 0, 1);
+	p.p3 = create_tuple(0, 0, 0, 1);
+	p.e1 = create_tuple(0, 0, 0, 1);
+	p.e2 = create_tuple(0, 0, 0, 1);
+	p.normal = create_tuple(0, 0, 0, 1);
 	return (p);
 }

@@ -6,11 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 22:15:33 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/27 17:38:18 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/06 21:39:55 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/canvas.h"
+#include "../include/entries.h"
 
 static bool	check_cap(t_ray ray, double t)
 {
@@ -37,19 +37,19 @@ t_list *intersect_caps(t_object cyl, t_ray ray)
 	i1.valid = false;
 	if (cyl.closed == false || fabs(ray.direction.y) < EPSILON)
 		return (xs);
-	t = (cyl.minimun - ray.origin.y) / ray.direction.y;
+	t = (cyl.minimum - ray.origin.y) / ray.direction.y;
 	i1 = intersection(t, cyl);
 	if (check_cap(ray, t))
-		xs = ft_lstnew(i1);
-	t = (cyl.maximun - ray.origin.y) / ray.direction.y;
+		xs = list_new_inter(i1);
+	t = (cyl.maximum - ray.origin.y) / ray.direction.y;
 	if (check_cap(ray, t))
 	{
 		i1 = intersection(t, cyl);
-		i1 = ft_lstnew(i1);
+		ii = list_new_inter(i1);
 		if (ft_lstsize(xs) == 1)
 			ft_lstadd_back(&xs, ii);
 		else
-			xs = ft_lstnew(i1);
+			xs = list_new_inter(i1);
 	}
 	return (xs);
 }
@@ -76,13 +76,13 @@ t_list		*intersect_world(t_initpara w, t_ray r)
 	tmp = w.objects;
 	while (tmp->next)
 	{
-		init = intersect(tmp->content, r);
+		ini = intersect(tmp->content, r);
 		if (ini != NULL)
 		{
 			if (xs == NULL)
 				xs = ini;
 			else
-				ft_lstadd_back(&xs, init);
+				ft_lstadd_back(&xs, ini);
 		}
 		tmp = tmp->next;
 	}

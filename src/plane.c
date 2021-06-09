@@ -6,11 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 19:26:53 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/19 19:30:15 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/06 20:10:41 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/components.h"
+#include "../include/entries.h"
 
 t_object	plane(void)
 {
@@ -18,7 +18,7 @@ t_object	plane(void)
 
 	p.id = 2;
 	p.type = "plane";
-	p.center = create_point(0, 0, 0);
+	p.center = create_tuple(0, 0, 0, 1);
 	p.transform = identity();
 	p.material.color = create_color(1, 1, 1);
 	p.material.ambient = 0.1;
@@ -28,11 +28,11 @@ t_object	plane(void)
 	p.minimum = -INFINITY;
 	p.maximum = INFINITY;
 	p.closed = false;
-	p.p1 = create_point(0, 0, 0);
-	p.p2 = create_point(0, 0, 0);
-	p.p3 = create_point(0, 0, 0);
-	p.e1 = create_point(0, 0, 0);
-	p.e2 = create_point(0, 0, 0);
-	p.normal = create_point(0, 0, 0);
+	p.p1 = create_tuple(0, 0, 0, 1);
+	p.p2 = create_tuple(0, 0, 0, 1);
+	p.p3 = create_tuple(0, 0, 0, 1);
+	p.e1 = create_tuple(0, 0, 0, 1);
+	p.e2 = create_tuple(0, 0, 0, 1);
+	p.normal = create_tuple(0, 0, 0, 1);
 	return (p);
 }

@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 20:37:15 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/03 16:57:18 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/07 21:55:22 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,10 +73,10 @@ static void	save_it(t_initpara conf, t_data mlx, int tag)
 	name = ft_strjoin("camera_", ft_itoa(tag));
 	fd = touch_bmp(name);
 	touch_header(conf, &head);
-	init_bmpheader(fd, header);
+	init_bmpheader(fd, head);
 	while (--y >= 0)
 	{
-		write(fd, &mlx.addr(y * mlx.line_length), mlx.line_length);
+		write(fd, &mlx.address[y * mlx.line_length], mlx.line_length);
 	}
 	close(fd);
 	free(name);

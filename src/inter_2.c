@@ -6,11 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 19:04:49 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/21 20:58:58 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/06 23:32:00 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/components.h"
+#include "../include/entries.h"
 
 static void sphere_ray(t_sphinter *p, t_ray ray_t, t_object s)
 {
@@ -21,7 +21,7 @@ static void sphere_ray(t_sphinter *p, t_ray ray_t, t_object s)
 	p->discriminant = p->p.y * p->p.y - 4 * p->p.x * p->p.z;
 }
 
-t_list  *intersect_sphere(t_object s, t_ray ray)
+t_list		*intersect_sphere(t_object s, t_ray ray)
 {
 	t_list		*xs;
 	t_list		*ii;
@@ -39,8 +39,8 @@ t_list  *intersect_sphere(t_object s, t_ray ray)
 		p.i1.object = s;
 		p.i2.t = (-p.p.y + 1 / q_rsqrt(p.discriminant)) / (2 * p.p.x);
 		p.i2.object = s;
-		xs = ft_lstnew(p.i1);
-		ii = ft_lstnew(p.i2);
+		xs = list_new_inter(p.i1);
+		ii = list_new_inter(p.i2);
 		if (p.i1.t > 0 || p.i2.t > 0)
 			p.p.z = 1;
 		ft_lstadd_back(&xs, ii);

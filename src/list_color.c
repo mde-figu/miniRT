@@ -6,11 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 12:53:58 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/27 14:28:57 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/06 19:52:51 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/components.h"
+#include "../include/entries.h"
 
 static void check_xs(t_list **xs, t_list *init)
 {

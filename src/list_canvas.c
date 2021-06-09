@@ -6,11 +6,10 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 19:55:45 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/19 20:16:03 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/06 21:06:09 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/components.h"
 #include "../include/entries.h"
 
 t_canvasl	*list_new_canvas(t_canvas cv)
@@ -29,7 +28,7 @@ t_canvasl	*list_new_canvas(t_canvas cv)
 int		list_size_canvas(t_canvasl *cv)
 {
 	int			i;
-	t_canvasl	tmp;
+	t_canvasl	*tmp;
 
 	if (cv)
 	{

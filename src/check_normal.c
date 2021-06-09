@@ -6,11 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:40:55 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/05 13:53:26 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/08 01:07:42 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/components.h"
+#include "../include/entries.h"
 
 int	is_num(char *str)
 {
@@ -21,9 +21,9 @@ int	is_num(char *str)
 	i = 1;
 	while (str[i] != '\0')
 	{
-		if (!ft_isdigit(s[i]))
+		if (!ft_isdigit(str[i]))
 		{
-			if (!(s[i] == '.'))
+			if (!(str[i] == '.'))
 				return (0);
 		}
 		i++;
@@ -31,7 +31,7 @@ int	is_num(char *str)
 	return (1);
 }
 
-static int	is_unit(float x, float y, float z)
+int	is_unit(double x, double y, double z)
 {
 	if (fabs(sqrt(x * x + y * y + z * z) - 1) < EPSILON)
 		return (1);
@@ -43,8 +43,8 @@ int	check_normal(char *str)
 	char	**tmp;
 	t_tuple t;
 
-	tmp = ft_split(s, ',');
-	if (ft_str_dlen(tmp) != 3)
+	tmp = ft_split(str, ',');
+	if (str_ptr_len(tmp) != 3)
 		return (free_entry(&tmp));
 	if (!(is_num(tmp[0]) || is_num(tmp[1]) || is_num(tmp[2])))
 		return (free_entry(&tmp));

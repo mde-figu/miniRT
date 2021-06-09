@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 18:21:38 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/05 21:45:43 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/07 23:35:17 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	check_color(char *str)
 	t_color	cc;
 
 	tmp = ft_split(str, ',');
-	if (ft_str_dlen(tmp) != 3)
+	if (str_ptr_len(tmp) != 3)
 		return (free_entry(&tmp));
 	if (!is_num(tmp[0]) || !is_num(tmp[1]) || !is_num(tmp[2]))
 		return (free_entry(&tmp));

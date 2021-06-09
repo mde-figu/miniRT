@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 16:00:31 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/03 17:16:01 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/07 23:12:31 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,23 +39,17 @@ typedef struct s_bmpheader
 	uint32_t		important_colors;
 }					t_bmpheader;
 
-typedef struct s_mlx
-{
-	void			*mlx;
-	void			*win;
-	t_cam			*cam;
-	t_cam			*begin;
-	int				bpp;
-	int				line_leng;
-	int				endian;
-	t_rt			*rt;
-}					t_mlx;
-
-typedef struct	s_imgg
-{
-	t_data		content
-	struct	s_imgg *next;
-}				t_imgg;
+//typedef struct s_mlx
+//{
+//	void			*mlx;
+//	void			*win;
+//	t_camera		*cam;
+//	t_camera		*begin;
+//	int				bpp;
+//	int				line_leng;
+//	int				endian;
+//	t_rt			*rt;
+//}					t_mlx;
 
 typedef struct	s_data
 {
@@ -64,7 +58,13 @@ typedef struct	s_data
 	int			bits_per_pixel;
 	int			line_length;
 	int			endian;
-}				t_data
+}				t_data;
+
+typedef struct	s_imgg
+{
+	t_data		content;
+	struct	s_imgg *next;
+}				t_imgg;
 
 typedef struct s_canvas
 {
@@ -78,29 +78,6 @@ typedef struct s_pixel
 	int				x;
 	int				y;
 }						t_pixel;
-
-typedef struct s_color
-{
-	double				red;
-	double				green;
-	double				brue;
-}						t_color;
-
-typedef struct s_material
-{
-	t_color				color;
-	double				ambient;
-	double				diffuse;
-	double				specular;
-	double				shininess;
-}						t_material;
-
-typedef struct s_canvas
-{
-	int					width;
-	int					height;
-	t_color				**pixel;
-}						t_canvas;
 
 typedef struct s_canvasl
 {
@@ -117,12 +94,6 @@ typedef struct s_beamoffset
 	double				world_y;
 }						t_beamoffset;
 
-typedef struct s_ray
-{
-	t_tuple				origin;
-	t_tuple				direction;
-}						t_ray;
-
 typedef struct s_intersect
 {
 	double				t;
@@ -130,10 +101,16 @@ typedef struct s_intersect
 	bool				valid;
 }						t_intersect;
 
+typedef struct s_interl
+{
+	t_intersect		content;
+	struct s_interl		*next;
+}						t_interl;
+
 typedef struct s_sphinter
 {
-	t_intersection		i1;
-	t_intersection		i2;
+	t_intersect			i1;
+	t_intersect			i2;
 	t_tuple				sphere_to_ray;
 	t_tuple				p;
 	double				discriminant;
@@ -142,7 +119,7 @@ typedef struct s_sphinter
 
 typedef struct s_trinter
 {
-	t_intersection		i1;
+	t_intersect			i1;
 	double				det;
 	double				f;
 	double				u;
@@ -161,26 +138,47 @@ typedef struct s_cyinter
 	double				y0;
 	double				y1;
 	double				discriminant;
-	t_intersection		i1;
+	t_intersect			i1;
 	int					cc;
 }						t_cyinter;
 
 typedef struct s_capinter
 {
-	t_list				*xs;
-	t_list				*xs_cap;
+	t_interl				*xs;
+	t_interl				*xs_cap;
 }						t_capinter;
 
-typedef struct s_camera
-{
-	int					hsize;
-	int					vsize;
-	double				field_of_view;
-	t_matrix			transform;
-	double				half_width;
-	double				half_height;
-	double				pixel_size;
-}						t_camera;
+t_canvas		create_canvas(int width, int height);
+t_ray			ray_to_pixel(t_camera camera, double px, double py);
+t_canvas		write_pixel(t_canvas *canvas,
+						int width, int height, t_color color_init);
+void			cameras(t_cameras **l, t_camera c);
+int				list_size_cam(t_cameras *lst);
+t_cameras		*list_new_cam(t_camera content);
+int				lst_size_img(t_imgg *img);
+int				list_size_inter(t_interl *lst);
+void			list_clear_inter(t_interl **lst);
+t_interl		*list_new_inter(t_intersect content);
+void			list_addback_inter(t_interl **lst, t_interl *new);
+void			list_clear_inter(t_interl **lst);
 
+t_ray			ray(t_tuple origin, t_tuple direction);
+t_tuple			posit(t_ray ray, double t);
+t_intersect		ray_hit(t_interl *xs);
+
+t_color			lighting(t_colcomp p);
+
+t_intersect		intersection(double t, t_object o);
+t_interl			*intersect(t_object s, t_ray ray);
+t_interl			*intersect_plan(t_object p, t_ray ray);
+t_interl			*intersect_square(t_object p, t_ray ray);
+t_interl			*intersect_triangle(t_object triangle, t_ray ray);
+t_interl			*intersect_sphere(t_object s, t_ray ray);
+t_interl			*intersect_cylinder(t_object cyl, t_ray ray);
+t_interl			*cyl_inter_aux(t_cyinter p, t_ray ray, t_capinter *c,
+					t_object cy1);
+t_interl			*intersect_caps(t_object cyl, t_ray ray);
+t_comps				pre_comp(t_intersect i, t_ray r);
+void				list_clear_inter(t_interl **lst);
 
 #endif

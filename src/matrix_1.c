@@ -6,11 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 14:06:06 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/27 11:39:01 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/06 20:39:37 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/components.h"
+#include "../include/entries.h"
 
 t_matrix	matrix(int dim)
 {

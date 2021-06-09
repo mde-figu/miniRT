@@ -6,12 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 23:56:35 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/11 00:04:18 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/07 18:55:24 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/entries.h"
-#include "../include/components.h"
 
 void	create_light(t_world *world, t_light light)
 {

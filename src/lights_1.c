@@ -6,11 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 13:34:15 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/28 20:26:26 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/07 23:32:36 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/components.h"
+#include "../include/entries.h"
 
 void	light(t_lights **l, t_light light)
 {
@@ -32,7 +32,7 @@ t_light	point_light(t_tuple position, t_color intensity)
 	t_light	ret;
 
 	ret.position = position;
-	ret.intensity = intensity
+	ret.intensity = intensity;
 	return (ret);
 }
 
@@ -51,7 +51,7 @@ static void	ft_aux(t_reflexpar *q, t_colcomp *p, double *light_dot_normal,
 {
 	q->diffuse = scalar_color(q->effective_color,
 			p->material.diffuse * *light_dot_normal);
-	q->reflectv = reflect(scalar_tuple(q->lightv, -1), p->normalv);
+	q->reflectv = reflect(scale_tuple(q->lightv, -1), p->normalv);
 	y->reflect_dot_eye = dot_product(q->reflectv, p->eyev);
 	if (y->reflect_dot_eye <= 0)
 	{

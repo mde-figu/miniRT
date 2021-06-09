@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 21:58:39 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/27 12:17:51 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/06 22:24:50 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,31 @@ t_tuple	posit(t_ray ray, double t)
 
 	p = add_tuple(ray.origin, scale_tuple(ray.direction, t));
 	return (p);
+}
+
+t_intersect	ray_hit(t_list *xs)
+{
+	t_intersect	it;
+	int			i;
+	int			lenght;
+	t_list		*tmp;
+
+	i = 0;
+	tmp = xs;
+	lenght = ft_lstsize(xs);
+	it.valid = false;
+	bubblesort(&xs);
+	while (i < length)
+	{
+		if (tmp->content.t > 0)
+		{
+			it.t = tmp->content.t;
+			it.object = tmp->content.object;
+			it.valid = true;
+			break ;
+		}
+		tmp = tmp->next;
+		i++;
+	}
+	return (it);
 }

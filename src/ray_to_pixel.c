@@ -6,11 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 21:10:58 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/27 14:25:58 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/06 19:51:16 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/canvas.h"
+#include "../include/entries.h"
 
 t_ray	ray_to_pixel(t_camera camera, double px, double py)
 {

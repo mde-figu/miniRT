@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 19:55:47 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/03 17:42:11 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/08 01:00:42 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ bool	rt_preparser(char *rt_file)
 
 	ret = false;
 	tmp = ft_strchr(rt_file, '.');
-	if (ft_memcmp(".rt", temp, 4) == 0)
+	if (ft_memcmp(".rt", tmp, 4) == 0)
 		ret = true;
-	return(resp);
+	return(ret);
 }
 
 static int	validate_config(char **entry_t)
@@ -71,9 +71,6 @@ int	validate_line(char *entry)
 
 bool	validate(int argc, char *argv[])
 {
-	char		*error;
-
-	error = NULL;
 	if (argc < 2)
 	{
 		error_list(1);
