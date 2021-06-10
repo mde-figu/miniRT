@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 16:00:31 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/07 23:12:31 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/10 19:01:34 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,33 +144,37 @@ typedef struct s_cyinter
 
 typedef struct s_capinter
 {
-	t_interl				*xs;
-	t_interl				*xs_cap;
+	t_interl			*xs;
+	t_interl			*xs_cap;
 }						t_capinter;
 
-t_canvas		create_canvas(int width, int height);
-t_ray			ray_to_pixel(t_camera camera, double px, double py);
-t_canvas		write_pixel(t_canvas *canvas,
+t_canvas			create_canvas(int width, int height);
+void				list_canvas(t_canvasl **l, t_canvas canvas);
+t_ray				ray_to_pixel(t_camera camera, double px, double py);
+void				write_pixel(t_canvas *canvas,
 						int width, int height, t_color color_init);
-void			cameras(t_cameras **l, t_camera c);
-int				list_size_cam(t_cameras *lst);
-t_cameras		*list_new_cam(t_camera content);
-int				lst_size_img(t_imgg *img);
-int				list_size_inter(t_interl *lst);
-void			list_clear_inter(t_interl **lst);
-t_interl		*list_new_inter(t_intersect content);
-void			list_addback_inter(t_interl **lst, t_interl *new);
-void			list_clear_inter(t_interl **lst);
+void				cameras(t_cameras **l, t_camera c);
+int					list_size_cam(t_cameras *lst);
+t_cameras			*list_new_cam(t_camera content);
+int					lst_size_img(t_imgg *img);
+int					list_size_inter(t_interl *lst);
+void				list_clear_inter(t_interl **lst);
+t_interl			*list_new_inter(t_intersect content);
+void				list_addback_inter(t_interl **lst, t_interl *new);
+void				list_clear_inter(t_interl **lst);
+t_imgg				*list_new_img(t_data img);
+void				list_clear_img(t_imgg **img);
+int					list_size_img(t_imgg *img);
 
-t_ray			ray(t_tuple origin, t_tuple direction);
-t_tuple			posit(t_ray ray, double t);
-t_intersect		ray_hit(t_interl *xs);
+t_ray				ray(t_tuple origin, t_tuple direction);
+t_tuple				posit(t_ray ray, double t);
+t_intersect			ray_hit(t_interl *xs);
 
-t_color			lighting(t_colcomp p);
+t_color				lighting(t_colcomp p);
 
-t_intersect		intersection(double t, t_object o);
+t_intersect			intersection(double t, t_object o);
 t_interl			*intersect(t_object s, t_ray ray);
-t_interl			*intersect_plan(t_object p, t_ray ray);
+t_interl			*intersect_plane(t_object p, t_ray ray);
 t_interl			*intersect_square(t_object p, t_ray ray);
 t_interl			*intersect_triangle(t_object triangle, t_ray ray);
 t_interl			*intersect_sphere(t_object s, t_ray ray);
@@ -180,5 +184,8 @@ t_interl			*cyl_inter_aux(t_cyinter p, t_ray ray, t_capinter *c,
 t_interl			*intersect_caps(t_object cyl, t_ray ray);
 t_comps				pre_comp(t_intersect i, t_ray r);
 void				list_clear_inter(t_interl **lst);
+
+void				arrange_pixels(t_data *data, int x, int y, int color);
+void				store_img(t_imgg **l, t_data img);
 
 #endif

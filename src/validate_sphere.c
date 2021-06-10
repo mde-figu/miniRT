@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validate_sphere.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 20:54:14 by mirkios           #+#    #+#             */
-/*   Updated: 2021/05/07 21:16:59 by mirkios          ###   ########.fr       */
+/*   Updated: 2021/06/10 14:21:20 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	validate_sphere(char **entry_t)
 {
-	if (ft_str_dlen(entry_t) != 4)
+	if (str_ptr_len(entry_t) != 4)
 		return (error_list(37));
 	if (!check_coordinate(entry_t[1]))
 		return (error_list(38));

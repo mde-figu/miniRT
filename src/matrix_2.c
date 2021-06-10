@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 11:13:09 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/06 20:50:36 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/10 18:37:41 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ t_matrix	scaling(double x, double y, double z)
 	write_matrix(&a, 3, 1, 0.0);
 	write_matrix(&a, 3, 2, 0.0);
 	write_matrix(&a, 3, 3, 1.0);
+	return (a);
 }
 
 double	cofactor(t_matrix a, int i, int j)
@@ -68,34 +69,6 @@ double	cofactor(t_matrix a, int i, int j)
 	if ((i + j) % 2 != 0)
 		ret = -1 * ret;
 	return (ret);
-}
-
-t_matrix	inverse(t_matrix a)
-{
-	t_matrix	b;
-	t_coord		p;
-	double		c;
-	double		d;
-
-	d = determinant(a);
-	c = 0;
-	b = matrix(a.dim)
-	if (!check_invert(a))
-		return (b);
-	else
-	{
-		p.i = -1;
-		while (++(p.1) < a.dim)
-		{
-			p.j = -1;
-			while (++(p.j) < a.dim)
-			{
-				c = matrix_minor(a, p.i, p.j);
-				b.element[p.j][p.i] = c / d;
-			}
-		}
-		return (b);
-	}
 }
 
 double	determinant(t_matrix a)
@@ -114,9 +87,9 @@ double	determinant(t_matrix a)
 		i = 0;
 		while (i < a.dim)
 		{
-			resp = resp + a.element[0][i] * cofactor(a, 0, i);
+			ret = ret + a.element[0][i] * cofactor(a, 0, i);
 			i++;
 		}
-		return (ret);
 	}
+	return (ret);
 }

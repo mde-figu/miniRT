@@ -6,13 +6,13 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 20:30:41 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/06 21:54:14 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/09 19:00:14 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/entries.h"
 
-int	lst_size_img(t_imgg *img)
+int	list_size_img(t_imgg *img)
 {
 	int		i;
 	t_imgg	*tmp;

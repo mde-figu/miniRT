@@ -6,13 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 21:12:55 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/17 12:30:52 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/09 18:17:02 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/entries.h"
-#include "../include/canvas.h"
-#include "../include/components.h"
 
 void	config_cam(t_initpara *initpara, char *ps, char *n, char *fov)
 {
@@ -33,8 +31,9 @@ void	config_cam(t_initpara *initpara, char *ps, char *n, char *fov)
 	p2.y = atof(tmp[1]);
 	p2.z = atof(tmp[2]);
 	free_entry(&tmp);
-	m = view_transform(create_point(p1.x, p1.y, p1.z),
-				create_point(p2.x, p2.y, p2.z), create_vector(0.001, 1, 0.001));
+	m = transform_cam(create_tuple(p1.x, p1.y, p1.z, 1),
+				create_tuple(p2.x, p2.y, p2.z, 1),
+				create_tuple(0.001, 1, 0.001, 0));
 	copy_matrix(&c.transform, m);
 	free_matrix(&m);
 }

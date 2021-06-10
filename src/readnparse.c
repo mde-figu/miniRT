@@ -6,25 +6,21 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 12:09:58 by mirkios           #+#    #+#             */
-/*   Updated: 2021/05/11 15:31:52 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/10 14:08:02 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/entries.h"
-#include "include/canvas.h"
-#include "include/components.h"
-#include "include/parameters.h"
+#include "../include/entries.h"
 
 static	void	init_para(t_initpara *initpara, t_line_fd *l)
 {
-	t_initpara->cams = NULL;
-	t_initpara->lighting = NULL;
-	t_initpara->objects = NULL;
-	t_initpara->canvas = NULL;
-	t_initpara->img = NULL;
-	t_initpara->img_init = NULL;
+	initpara->cams = NULL;
+	initpara->lighting = NULL;
+	initpara->objects = NULL;
+	initpara->canvas = NULL;
+	initpara->img = NULL;
+	initpara->img_init = NULL;
 	l->line = NULL;
-
 }
 
 static int	ft_aux(char *line, t_initpara *initpara)
@@ -33,13 +29,13 @@ static int	ft_aux(char *line, t_initpara *initpara)
 	{
 		if (!validate_line(line))
 			return (0);
-		conf_parameters(&config, line);
+		conf_parameters(&initpara, line);
 		free(line);
 	}
 	return (1);
 }
 
-int	readfile(t_initpara *initpara, char *[])
+int	readfile(t_initpara *initpara, char *argv[])
 {
 	t_line_fd l;
 
@@ -47,17 +43,17 @@ int	readfile(t_initpara *initpara, char *[])
 	l.fd = open(argv[1], O_RDONLY);
 	if (!l.fd)
 		error_list(0);
-	l.ii = get_next_line(p.fd, &p.line)
-	while ((l.line > 0)
+	l.ii = get_next_line(l.fd, &l.line);
+	while (l.ii > 0)
 	{
 		if (l.line != NULL && *l.line != '\0' && *l.line != '#')
 		{
-			if(!validate_line(entry))
+			if(!validate_line(l.line))
 				return(false);
-			conf_parameters(&initpara, entry, obj_num);
-			free(entry);
+			conf_parameters(&initpara, l.line);
+			free(l.line);
 		}
-		l.ii = get_next_line(l.fd, &l.line)
+		l.ii = get_next_line(l.fd, &l.line);
 	}
-	return(ft_aux(l.line, initpara)
+	return(ft_aux(l.line, initpara));
 }

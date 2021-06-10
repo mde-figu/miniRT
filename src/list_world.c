@@ -6,11 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 21:39:24 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/07 00:39:27 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/09 19:34:06 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/components.h"
+#include "../include/entries.h"
 
 int	list_size_world(t_objects *lst)
 {

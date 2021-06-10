@@ -6,11 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 19:17:52 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/08 00:04:12 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/09 17:17:27 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/components.h"
+#include "../include/entries.h"
 
 t_object	cylinder(void)
 {
@@ -18,7 +18,7 @@ t_object	cylinder(void)
 
 	p.id = 1;
 	p.type = "cylinder";
-	p.center = create_point(0, 0, 0);
+	p.center = create_tuple(0, 0, 0, 1);
 	p.transform = identity();
 	p.material.color = create_color(1, 1, 1);
 	p.material.ambient = 0.1;
@@ -28,11 +28,11 @@ t_object	cylinder(void)
 	p.minimum = -INFINITY;
 	p.maximum = INFINITY;
 	p.closed = false;
-	p.p1 = create_point(0, 0, 0);
-	p.p2 = create_point(0, 0, 0);
-	p.p3 = create_point(0, 0, 0);
-	p.e1 = create_point(0, 0, 0);
-	p.e2 = create_point(0, 0, 0);
-	p.normal = create_point(0, 0, 0);
+	p.p1 = create_tuple(0, 0, 0, 1);
+	p.p2 = create_tuple(0, 0, 0, 1);
+	p.p3 = create_tuple(0, 0, 0, 1);
+	p.e1 = create_tuple(0, 0, 0, 1);
+	p.e2 = create_tuple(0, 0, 0, 1);
+	p.normal = create_tuple(0, 0, 0, 1);
 	return (p);
 }

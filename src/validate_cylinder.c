@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   validate_cylinder.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 13:06:12 by mirkios           #+#    #+#             */
-/*   Updated: 2021/05/08 13:26:42 by mirkios          ###   ########.fr       */
+/*   Updated: 2021/06/09 20:15:19 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../include/entries.h"
+
 int	validate_cylinder(char **entry_t)
 {
-	if (ft_str_dlen(entry_t) != 6)
+	if (str_ptr_len(entry_t) != 6)
 		return (error_list(48));
 	if (atof(entry_t[3]) < 0)
 		return (error_list(49));

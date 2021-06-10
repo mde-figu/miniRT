@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 20:06:01 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/08 01:02:31 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/10 18:23:03 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ typedef struct s_object
 {
 	int					id;
 	char				*type;
-	float				minimum;
-	float				maximum;
-	float				side;
+	double				minimum;
+	double				maximum;
+	double				side;
 	t_tuple				center;
 	t_matrix			transform;
 	t_material			material;
@@ -137,48 +137,54 @@ t_tuple			subtract_tuple(t_tuple t1, t_tuple t2);
 t_tuple			negate_tuple(t_tuple t1);
 t_tuple			scale_tuple(t_tuple t1, double scale);
 double			tuple_mag(t_tuple t1);
+float			tuple_rsqrt(t_tuple t1);
 float			q_rsqrt(float number);
 t_tuple			tuple_normalize(t_tuple t1);
 t_tuple			quake_normalize(t_tuple t1);
 t_tuple			cross_product(t_tuple t1, t_tuple t2);
 double			dot_product(t_tuple i, t_tuple j);
 t_tuple 		normal_placement(t_object o, t_tuple point);
-t_material		 mat_par(void);
+t_material		mat_par(void);
 
-t_matrix	matrix(int dim);
-t_tuple		matrix_x_vector(t_matrix a, t_tuple b);
-void		write_matrix(t_matrix *m, int i, int j, double e);
-void		copy_matrix(t_matrix *d, t_matrix o);
-void		free_matrix(t_matrix *a);
-t_matrix	translation(double x, double y, double z);
-t_matrix	scaling(double x, double y, double z);
-t_ray		transform(t_ray r, t_matrix m);
-double		matrix_minor(t_matrix a, int i, int j);
-t_matrix	inverse(t_matrix a);
-double		determinant(t_matrix a);
-t_matrix	submatrix(t_matrix a, int i, int j);
-double		cofactor(t_matrix a, int i, int j);
-t_matrix	matrix_multi(t_matrix a, t_matrix b);
-t_matrix	identity(void);
-t_matrix	inverse(t_matrix a);
-bool		is_invertible(t_matrix a);
-t_matrix	rotation_x(double r);
-t_matrix	rotation_y(double r);
-t_matrix	rotation_z(double r);
-t_matrix	rotate(t_tuple normal);
+t_matrix		matrix(int dim);
+t_tuple			matrix_x_vector(t_matrix a, t_tuple b);
+void			write_matrix(t_matrix *m, int i, int j, double e);
+void			copy_matrix(t_matrix *d, t_matrix o);
+void			free_matrix(t_matrix *a);
+t_matrix		translation(double x, double y, double z);
+t_matrix		scaling(double x, double y, double z);
+t_ray			transform(t_ray r, t_matrix m);
+t_matrix		transpose(t_matrix a);
+double			matrix_minor(t_matrix a, int i, int j);
+t_matrix		inverse(t_matrix a);
+double			determinant(t_matrix a);
+t_matrix		submatrix(t_matrix a, int i, int j);
+double			cofactor(t_matrix a, int i, int j);
+t_matrix		matrix_multi(t_matrix a, t_matrix b);
+t_matrix		identity(void);
+t_matrix		inverse(t_matrix a);
+bool			is_invertible(t_matrix a);
+t_matrix		rotation_x(double r);
+t_matrix		rotation_y(double r);
+t_matrix		rotation_z(double r);
+t_matrix		rotate(t_tuple normal);
 
-void		list_obj(t_objects **l, t_object o);
-int			list_size_obj(t_objects *lst);
-t_objects	*list_new_obj(t_object content);
-int			list_size_world(t_objects *lst);
-t_objects	*list_new_world(t_object content);
-int			list_size_lig(t_lights *lst);
-t_lights	*list_new_lig(t_light content);
-void		iworld(t_world *world, t_object content);
-void		create_light(t_world *world, t_light light);
-void		light(t_lights **l, t_light light);
-t_light		point_light(t_tuple position, t_color intensity);
-t_tuple		reflect(t_tuple in, t_tuple normal);
+void			list_obj(t_objects **l, t_object o);
+int				list_size_obj(t_objects *lst);
+t_objects		*list_new_obj(t_object content);
+int				list_size_world(t_objects *lst);
+t_objects		*list_new_world(t_object content);
+int				list_size_lig(t_lights *lst);
+t_lights		*list_new_lig(t_light content);
+void			iworld(t_world *world, t_object content);
+void			create_light(t_world *world, t_light light);
+void			light(t_lights **l, t_light light);
+t_light			point_light(t_tuple position, t_color intensity);
+t_tuple			reflect(t_tuple in, t_tuple normal);
+
+
+t_camera		camera(int hsize, int vsize, double field_of_view);
+t_matrix		transform_cam(t_tuple from, t_tuple to, t_tuple up);
 
 
 #endif

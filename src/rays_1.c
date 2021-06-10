@@ -6,11 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 21:58:39 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/06 22:24:50 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/10 18:39:20 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/canvas.h"
+#include "../include/entries.h"
 
 t_ray	ray(t_tuple origin, t_tuple direction)
 {
@@ -30,19 +30,19 @@ t_tuple	posit(t_ray ray, double t)
 	return (p);
 }
 
-t_intersect	ray_hit(t_list *xs)
+t_intersect	ray_hit(t_interl *xs)
 {
 	t_intersect	it;
 	int			i;
 	int			lenght;
-	t_list		*tmp;
+	t_interl		*tmp;
 
 	i = 0;
 	tmp = xs;
-	lenght = ft_lstsize(xs);
+	lenght = list_size_inter(xs);
 	it.valid = false;
 	bubblesort(&xs);
-	while (i < length)
+	while (i < lenght)
 	{
 		if (tmp->content.t > 0)
 		{

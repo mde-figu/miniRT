@@ -6,15 +6,16 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 00:47:50 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/19 19:37:15 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/09 18:55:27 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	conf_parameters(t_initpara **initpara, char line)
+#include "../include/entries.h"
+
+void	conf_parameters(t_initpara **initpara, char *line)
 {
 	char	**entry_t;
 	t_obj_par	p;
-	t_obj2_par	c;
 	t_vtx_par	vt;
 
 	entry_t = ft_split(line, ' ');
@@ -31,7 +32,7 @@ void	conf_parameters(t_initpara **initpara, char line)
 	if (ft_memcmp("sp", entry_t[0], 3) == 0)
 		config_sp(*initpara, entry_t[1], entry_t[2], entry_t[3]);
 	if (ft_memcmp("sq", entry_t[0], 3) == 0)
-		config_sq(*initpara, entry_t[1], entry_t[2], entry_t[3]);
+		config_sq(*initpara, entry_t[1], entry_t[2], entry_t[3], entry_t[4]);
 	if (ft_memcmp("tr", entry_t[0], 3) == 0)
 		config_tr(*initpara, vt, entry_t);
 	if (ft_memcmp("cy", entry_t[0], 3) == 0)

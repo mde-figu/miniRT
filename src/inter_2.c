@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 19:04:49 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/06 23:32:00 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/10 18:23:48 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ static void sphere_ray(t_sphinter *p, t_ray ray_t, t_object s)
 	p->discriminant = p->p.y * p->p.y - 4 * p->p.x * p->p.z;
 }
 
-t_list		*intersect_sphere(t_object s, t_ray ray)
+t_interl		*intersect_sphere(t_object s, t_ray ray)
 {
-	t_list		*xs;
-	t_list		*ii;
-	t_ray		ray_t;
-	t_sphinter	p;
+	t_interl		*xs;
+	t_interl		*ii;
+	t_ray			ray_t;
+	t_sphinter		p;
 
 	xs = NULL;
 	p.inv = inverse(s.transform);
@@ -43,7 +43,7 @@ t_list		*intersect_sphere(t_object s, t_ray ray)
 		ii = list_new_inter(p.i2);
 		if (p.i1.t > 0 || p.i2.t > 0)
 			p.p.z = 1;
-		ft_lstadd_back(&xs, ii);
+		list_addback_inter(&xs, ii);
 	}
 	return (xs);
 }

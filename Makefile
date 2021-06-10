@@ -6,17 +6,18 @@
 #    By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/03 20:08:17 by mde-figu          #+#    #+#              #
-#    Updated: 2021/06/06 19:23:03 by mde-figu         ###   ########.fr        #
+#    Updated: 2021/06/10 18:50:40 by mde-figu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC_PATH = ./src
 OBJ_PATH = ./obj
-LIB_PATH = ./lib
+LIB_PATH = ./minilibx
 CONFIG_PATH = ./config
 LIBFT_PATH = ./libft
-MLX_PATH = ./lib/mlx_linux
-MLX_INC_PATH = -I ./lib/mlx_linux
+GNL_PATH = ./get_next_line
+MLX_PATH = ./minilibx/minilibx-linux
+MLX_INC_PATH = -I ./minilibx/mlx-linux
 MLX_LIBS = -lXext -lX11 -lm -lz
 
 
@@ -24,12 +25,14 @@ CC = gcc
 FLAGS = -Wall -Wextra -Werror
 LIB_NAME = libvectors.a
 LIBFT_NAME = libft.a
+GNL_NAME = get_next_line.a
 MLX_NAME = libmlx_Linux.a
 NAME = miniRT
 MAIN = main.c
 
 LIB = $(LIB_PATH)/$(LIB_NAME)
 LIBFT = $(LIBFT_PATH)/$(LIBFT_NAME)
+GNL = $(GNL_PATH)/$(GNL_NAME)
 SRC = $(notdir $(wildcard ./src/*.c))
 OBJ=$(addprefix $(OBJ_PATH)/, $(SRC:.c=.o))
 
@@ -49,7 +52,7 @@ fclean:	clean
 re: fclean all
 
 $(NAME):	$(CONFIG_PATH) $(LIBFT) $(LIB)	$(MLX_PATH)/$(MLX_NAME)
-	@$(CC) $(FLAGS) $(MAIN) -g $(LIB) $(LIBFT) $(MLX_PATH)/$(MLX_NAME) $(MLX_LIBS) -o $@
+	@$(CC) $(FLAGS) $(MAIN) -g $(LIB) $(LIBFT) $(GNL) $(MLX_PATH)/$(MLX_NAME) $(MLX_LIBS) -o $@
 
 $(LIB): $(OBJ)
 	@ar rcs $@ $(OBJ)
@@ -59,6 +62,9 @@ $(OBJ_PATH)/%.o:	$(SRC_PATH)/%.c
 
 $(LIBFT):
 	@make -C $(LIBFT_PATH)
+
+$(GNL):
+	@make -C $(GNL_PATH)
 
 $(MLX_PATH)/%.a:	$(MLX_PATH)/$(MLX_NAME)
 	@ar rcs $(MLX_PATH)/$(MLX_NAME) $(OBJ)

@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 21:16:49 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/08 01:06:02 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/09 20:52:31 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,14 @@ typedef struct s_colmix
 	t_color				c2;
 }						t_colmix;
 
+typedef struct s_orientcam
+{
+	t_tuple				forward;
+	t_tuple				upn;
+	t_tuple				left;
+	t_tuple				true_up;
+}						t_orientcam;
+
 typedef struct s_colcomp
 {
 	t_color				a;
@@ -98,9 +106,18 @@ typedef struct s_colcomp
 	bool				in_shadow;
 }						t_colcomp;
 
+typedef struct s_iter
+{
+	int					i;
+	int					j;
+	bool				swapped;
+	int					n;
+}						t_iter;
+
 int			str_ptr_len(char **s);
 t_color		lighting(t_colcomp p);
 double		atof(const char *nptr);
+int			ft_pow(int n, int exp);
 
 
 #endif

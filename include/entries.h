@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 14:23:16 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/08 01:05:56 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/10 18:00:32 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ typedef struct s_initpara
 	bool		lightonoff;
 	t_color		init_color;
 	t_color		ambient;
-	t_camera	*cams;
-	t_canvas	*canvas;
+	t_cameras	*cams;
+	t_canvasl	*canvas;
 	t_lights	*lighting;
 	t_objects	*objects;
 	t_imgg		*img;
@@ -59,7 +59,7 @@ typedef struct s_shadepar
 	bool				shadowed;
 }						t_shadepar;
 
-
+void		splash();
 
 int			error_list(int error_nbr);
 bool		validate(int argc, char *argv[]);
@@ -74,6 +74,19 @@ int			validate_sphere(char **entry_t);
 int			validate_square(char **entry_t);
 int			validate_cylinder(char **entry_t);
 int			validate_triangle(char **entry_t);
+int			validate_line(char *entry);
+
+void		conf_parameters(t_initpara **initpara, char *line);
+void		config_res(t_initpara *initpara, char *res_x, char *res_y);
+void		config_amb(t_initpara *initpara, char *amb_ratio, char *amb_color);
+void		config_cam(t_initpara *initpara, char *ps, char *n, char *fov);
+void		config_cy(t_initpara *initpara, t_obj_par p, char **entry_t);
+void		config_lig(t_initpara *initpara, char *ps, char *br, char *col);
+void		config_pl(t_initpara *initpara, char *pos, char *n, char *col);
+void		config_sp(t_initpara *initpara, char *pos, char *dia, char *col);
+void		config_sq(t_initpara *initpara, char *pos, char *n,
+						char *s, char *col);
+void		config_tr(t_initpara *initpara, t_vtx_par pt, char **entry_t);
 
 int			check_coordinate(char *str);
 int			check_normal(char *str);
@@ -86,16 +99,23 @@ t_object	plane(void);
 t_object	square(void);
 t_object	sphere(void);
 t_object	cylinder(void);
+t_object	triangle(int id, t_tuple p1, t_tuple p2, t_tuple p3);
+
 
 t_color		list_color(t_initpara initpara, t_ray ray);
-void		config_res(t_initpara *initpara, char *res_x, char *res_y);
-t_list		*intersect_world(t_initpara w, t_ray r);
+t_interl	*intersect_world(t_initpara w, t_ray r);
 int			free_entry(char ***entry);
 void		image(t_initpara *conf);
 void		save(t_initpara conf);
-
+int			save_on(int argc);
 void		set_world(t_world *world, t_initpara initpara);
+void		make_canvas(t_initpara *initpara);
+void		load_screen(t_initpara conf, bool savei);
+t_canvas	render(t_camera camera, t_initpara initpara);
+t_color		shadding(t_initpara w, t_comps comp);
+int			readfile(t_initpara *initpara, char *argv[]);
 
-void		bubblesort(t_list **xs);
+
+void		bubblesort(t_interl **xs);
 
 #endif

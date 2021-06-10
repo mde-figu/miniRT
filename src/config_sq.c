@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 13:34:26 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/07 23:47:15 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/09 18:54:01 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static	t_tuple	normal(t_object *o, char *normal)
 	return (p);
 }
 
-void	config_sq(t_initpara *initpara, char *pos, char *n, t_obj2_par p)
+void	config_sq(t_initpara *initpara, char *pos, char *n, char *s, char *col)
 {
 	t_object	o;
 	t_matrix	c;
@@ -61,7 +61,7 @@ void	config_sq(t_initpara *initpara, char *pos, char *n, t_obj2_par p)
 	t_tuple		po;
 
 	o = square();
-	c = posit_sq(&o, pos, p.color, p.size);
+	c = posit_sq(&o, pos, col, s);
 	po = normal(&o, n);
 	a = rotate(create_tuple(po.x, po.y, po.z, 0));
 	d = matrix_multi(a, c);

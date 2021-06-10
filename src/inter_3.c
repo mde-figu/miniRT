@@ -6,16 +6,15 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 21:04:13 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/24 21:45:30 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/09 20:12:04 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/components.h"
-#include "../include/canvas.h"
+#include "../include/entries.h"
 
-static t_list	cap_inter(t_cyinter p; t_capinter *c, t_object cyl, t_ray ray)
+static t_interl	*cap_inter(t_cyinter p, t_capinter *c, t_object cyl, t_ray ray)
 {
-	t_list	*ret;
+	t_interl	*ret;
 
 	ret = NULL;
 	if (fabs(p.a) < EPSILON)
@@ -31,17 +30,17 @@ static t_list	cap_inter(t_cyinter p; t_capinter *c, t_object cyl, t_ray ray)
 	return (ret);
 }
 
-static t_list	*cyl_list(t_capinter *c)
+static t_interl	*cyl_list(t_capinter *c)
 {
 	if (c->xs != NULL)
 	{
-		ft_lstclear(&c->xs);
+		list_clear_inter(&c->xs);
 		c->xs = NULL;
 	}
 	return (c->xs_cap);
 }
 
-t_list	*intersect_cylinder(t_object cyl, t_ray ray)
+t_interl	*intersect_cylinder(t_object cyl, t_ray ray)
 {
 	t_cyinter	p;
 	t_capinter	c;
@@ -54,16 +53,16 @@ t_list	*intersect_cylinder(t_object cyl, t_ray ray)
 		return (c.xs);
 	if (p.cc == 1)
 		cyl_list(&c);
-	else if (ft_lstsize(c.xs_cap) == 0)
+	else if (list_size_inter(c.xs_cap) == 0)
 	{
 		if (c.xs_cap != NULL)
 		{
-			ft_lstclear(&c.xs_cap)
+			list_clear_inter(&c.xs_cap);
 			c.xs_cap = NULL;
 		}
 		return (c.xs);
 	}
 	else
-		ft_lstadd_back(&c.xs, c.xs_cap);
+		list_addback_inter(&c.xs, c.xs_cap);
 	return (c.xs);
 }

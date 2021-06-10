@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 22:15:33 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/06 21:39:55 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/10 14:44:53 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ static bool	check_cap(t_ray ray, double t)
 	return (r);
 }
 
-t_list *intersect_caps(t_object cyl, t_ray ray)
+t_interl *intersect_caps(t_object cyl, t_ray ray)
 {
 	t_intersect i1;
-	t_list		*xs;
-	t_list		*ii;
+	t_interl		*xs;
+	t_interl		*ii;
 	double		t;
 
 	xs = NULL;
@@ -46,29 +46,29 @@ t_list *intersect_caps(t_object cyl, t_ray ray)
 	{
 		i1 = intersection(t, cyl);
 		ii = list_new_inter(i1);
-		if (ft_lstsize(xs) == 1)
-			ft_lstadd_back(&xs, ii);
+		if (list_size_inter(xs) == 1)
+			list_addback_inter(&xs, ii);
 		else
 			xs = list_new_inter(i1);
 	}
 	return (xs);
 }
 
-static void	aux(t_list **xs, t_list *init)
+static void	aux(t_interl **xs, t_interl *init)
 {
 	if (init != NULL)
 	{
 		if (*xs == NULL)
 			*xs = init;
 		else
-			ft_lstadd_back(&*xs, init);
+			list_addback_inter(&*xs, init);
 	}
 }
 
-t_list		*intersect_world(t_initpara w, t_ray r)
+t_interl		*intersect_world(t_initpara w, t_ray r)
 {
-	t_list		*xs;
-	t_list		*ini;
+	t_interl		*xs;
+	t_interl		*ini;
 	t_objects	*tmp;
 
 	xs = NULL;
@@ -82,7 +82,7 @@ t_list		*intersect_world(t_initpara w, t_ray r)
 			if (xs == NULL)
 				xs = ini;
 			else
-				ft_lstadd_back(&xs, ini);
+				list_addback_inter(&xs, ini);
 		}
 		tmp = tmp->next;
 	}

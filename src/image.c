@@ -6,14 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 21:26:23 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/01 20:31:59 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/09 20:20:23 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/entries.h"
-#include "../include/parameters.h"
-#include "../include/components.h"
-#include "../include/canvas.h"
 
 static void	set(t_coord c, t_canvas cv, t_imgg **img, t_initpara *conf)
 {
@@ -23,8 +20,8 @@ static void	set(t_coord c, t_canvas cv, t_imgg **img, t_initpara *conf)
 	t_color	cor;
 	t_data	im;
 
-	im.img = mlx_new_image(config->mlx, c.i, c.j);
-	im.addr = mlx_get_data_addr(im.img, &im.bits_per_pixel,
+	im.image = mlx_new_image(conf->mlx, c.i, c.j);
+	im.address = mlx_get_data_addr(im.image, &im.bits_per_pixel,
 				&im.line_length, &im.endian);
 	y = 0;
 	while(y < c.i - 1)
@@ -46,11 +43,11 @@ static void	set(t_coord c, t_canvas cv, t_imgg **img, t_initpara *conf)
 
 void	image(t_initpara *conf)
 {
-	t_canvasl	tmp;
+	t_canvasl	*tmp;
 	t_coord		c;
 
-	c.i = conf->r_x;
-	c.j = conf->r_y;
+	c.i = conf->res_x;
+	c.j = conf->res_y;
 	tmp = conf->canvas;
 	while (tmp->next)
 	{

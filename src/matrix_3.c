@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 22:29:51 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/06 20:50:20 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/09 19:33:46 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_matrix	submatrix(t_matrix a, int i, int j)
 	b = matrix(a.dim - 1);
 	l = -1;
 	ii = 0;
-	while (**l < a.dim)
+	while (++l < a.dim)
 	{
 		m = -1;
 		jj = 0;

@@ -6,11 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 13:13:35 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/06 20:19:32 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/10 18:36:26 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/components.h"
+#include "../include/entries.h"
 
 t_matrix	inverse(t_matrix a)
 {
@@ -19,11 +19,14 @@ t_matrix	inverse(t_matrix a)
 	double		c;
 	double		d;
 
-	d = det(a);
+	d = determinant(a);
 	c = 0;
 	b = matrix(a.dim);
 	if (!is_invertible(a))
-		return (error_list(57));
+	{
+		error_list(57);
+		return (b);
+	}
 	p.i = -1;
 	while (++(p.i) < a.dim)
 	{
@@ -39,7 +42,7 @@ t_matrix	inverse(t_matrix a)
 
 bool	is_invertible(t_matrix a)
 {
-	if (det(a) == 0)
+	if (determinant(a) == 0)
 		return (false);
 	else
 		return (true);

@@ -6,11 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 19:21:39 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/06 20:51:48 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/09 17:37:08 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/components.h"
+#include "../include/entries.h"
 
 t_object	square(void)
 {

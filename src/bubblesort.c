@@ -6,15 +6,23 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 21:40:23 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/06 21:48:34 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/09 20:39:04 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/entries.h"
 
-static t_list	*swap(t_list *ptr1, t_list *ptr2)
+void	init_iter(t_iter *p, t_interl *xs)
 {
-	t_list	*tmp;
+	p->i = 0;
+	p->j = -1;
+	p->swapped = 0;
+	p->n = list_size_inter(xs);
+}
+
+static t_interl	*swap(t_interl *ptr1, t_interl *ptr2)
+{
+	t_interl	*tmp;
 
 	tmp = ptr2->next;
 	ptr2->next = ptr1;
@@ -22,15 +30,15 @@ static t_list	*swap(t_list *ptr1, t_list *ptr2)
 	return (ptr2);
 }
 
-void	bubblesort(t_list **xs)
+void	bubblesort(t_interl **xs)
 {
-	t_list		**tmp;
-	t_list		*p1;
-	t_list		*p2;
-	t_iter		p;
+	t_interl		**tmp;
+	t_interl		*p1;
+	t_interl		*p2;
+	t_iter			p;
 
 	init_iter(&p, *xs);
-	while (**p.i < p.n)
+	while (++p.i < p.n)
 	{
 		p.j = -1;
 		tmp = xs;

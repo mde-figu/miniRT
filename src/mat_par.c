@@ -6,11 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 19:23:18 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/15 19:27:11 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/09 19:34:30 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/canvas.h"
+#include "../include/entries.h"
 
 t_material  mat_par(void)
 {

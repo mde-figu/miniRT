@@ -6,12 +6,13 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 15:53:39 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/03/07 18:32:46 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/10 18:59:34 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
+# define BUFFER_SIZE 100
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <sys/resource.h>

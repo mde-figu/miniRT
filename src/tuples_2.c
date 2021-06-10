@@ -6,11 +6,11 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 18:43:18 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/27 14:27:12 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/10 18:24:13 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/components.h"
+#include "../include/entries.h"
 
 double	tuple_mag(t_tuple t1)
 {
@@ -24,11 +24,12 @@ double	tuple_mag(t_tuple t1)
 	return (magnitude);
 }
 
-float	q_rsqrt(t_tuple t1)
+float	tuple_rsqrt(t_tuple t1)
 {
 	long		i;
 	float		x2;
 	float		y;
+	float		number;
 	const float	threehalfs = 1.5F;
 
 	number = ((t1.x) * (t1.x)) + ((t1.y) * (t1.y)) + ((t1.z) * (t1.z));
@@ -47,13 +48,10 @@ t_tuple	tuple_normalize(t_tuple t1)
 	double	magnitude;
 
 	magnitude = tuple_mag(t1);
-	else
-	{
-		t1.x = t1.x / magnitude;
-		t1.y = t1.y / magnitude;
-		t1.z = t1.z / magnitude;
-		t1.w = t1.w / magnitude;
-	}
+	t1.x = t1.x / magnitude;
+	t1.y = t1.y / magnitude;
+	t1.z = t1.z / magnitude;
+	t1.w = t1.w / magnitude;
 	return (t1);
 }
 
@@ -61,14 +59,11 @@ t_tuple	quake_normalize(t_tuple t1)
 {
 	double	magnitude;
 
-	magnitude = (double)q_rsqrt(t1);
-	else
-	{
-		t1.x = t1.x * magnitude;
-		t1.y = t1.y * magnitude;
-		t1.z = t1.z * magnitude;
-		t1.w = t1.w * magnitude;
-	}
+	magnitude = (double)tuple_rsqrt(t1);
+	t1.x = t1.x * magnitude;
+	t1.y = t1.y * magnitude;
+	t1.z = t1.z * magnitude;
+	t1.w = t1.w * magnitude;
 	return (t1);
 }
 

@@ -6,17 +6,16 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 17:37:29 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/05/27 14:18:46 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/10 19:01:05 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/components.h"
 #include "../include/entries.h"
 
-static t_list	*ft_aux(t_object s, t_ray ray)
+static t_interl	*ft_aux(t_object s, t_ray ray)
 {
 	t_ray		local_ray;
-	t_list		*xs;
+	t_interl		*xs;
 	t_matrix	a;
 
 	if (ft_memcmp("plan", s.type, 5) == 0)
@@ -24,7 +23,7 @@ static t_list	*ft_aux(t_object s, t_ray ray)
 		a = inverse(s.transform);
 		local_ray = transform(ray, a);
 		free_matrix(&a);
-		xs = intersect_plan(s, local_ray);
+		xs = intersect_plane(s, local_ray);
 	}
 	else if (ft_memcmp("square", s.type, 7) == 0)
 	{
@@ -36,9 +35,9 @@ static t_list	*ft_aux(t_object s, t_ray ray)
 	return (xs);
 }
 
-t_list	*intersect(t_object s, t_ray ray)
+t_interl	*intersect(t_object s, t_ray ray)
 {
-	t_list		*xs;
+	t_interl		*xs;
 	t_ray		local_ray;
 	t_matrix	a;
 

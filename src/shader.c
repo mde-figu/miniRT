@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 14:29:06 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/06 22:40:47 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/10 18:15:19 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ bool		the_shadow_knows(t_light light, t_initpara w, t_tuple point)
 	t_tuple			v;
 	t_raypara		p;
 	t_ray			r;
-	t_list			*intersections;
+	t_interl			*intersections;
 	t_intersect		h;
 
 	v = subtract_tuple(light.position, point);
