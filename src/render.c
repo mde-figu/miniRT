@@ -6,22 +6,21 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 20:23:09 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/09 17:54:57 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/11 14:47:05 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/entries.h"
 
 
-t_canvas	render(t_camera camera, t_initpara initpara)
+void	render(t_canvas *canvas, t_camera camera, t_initpara initpara)
 {
-	t_canvas	image;
 	int			x;
 	int			y;
 	t_ray		ray;
 	t_color		color;
 
-	image = create_canvas(camera.hsize, camera.vsize);
+	create_canvas(canvas, camera.hsize, camera.vsize);
 	y = 0;
 	while (y < camera.vsize - 1)
 	{
@@ -30,10 +29,9 @@ t_canvas	render(t_camera camera, t_initpara initpara)
 		{
 			ray = ray_to_pixel(camera, x, y);
 			color = list_color(initpara, ray);
-			write_pixel(&image, x, y, color);
+			write_pixel(canvas, x, y, color);
 			x++;
 		}
 		y++;
 	}
-	return (image);
 }

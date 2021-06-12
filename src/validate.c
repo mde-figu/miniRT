@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 19:55:47 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/09 21:32:03 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/11 14:15:02 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ bool	rt_preparser(char *rt_file)
 
 	ret = false;
 	tmp = ft_strchr(rt_file, '.');
+	if (tmp == NULL)
+		return (ret);
 	if (ft_memcmp(".rt", tmp, 4) == 0)
 		ret = true;
 	return(ret);
@@ -86,7 +88,7 @@ bool	validate(int argc, char *argv[])
 		error_list(3);
 		return	(true);
 	}
-	if (argc == 3 && ft_memcmp("--save", argv[2],7) != 0)
+	if (argc == 3 && ft_memcmp("--save", argv[2], 7) != 0)
 	{
 		error_list(4);
 		return	(true);

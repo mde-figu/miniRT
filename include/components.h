@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 20:06:01 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/10 18:23:03 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/11 13:37:37 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,8 +176,6 @@ int				list_size_world(t_objects *lst);
 t_objects		*list_new_world(t_object content);
 int				list_size_lig(t_lights *lst);
 t_lights		*list_new_lig(t_light content);
-void			iworld(t_world *world, t_object content);
-void			create_light(t_world *world, t_light light);
 void			light(t_lights **l, t_light light);
 t_light			point_light(t_tuple position, t_color intensity);
 t_tuple			reflect(t_tuple in, t_tuple normal);

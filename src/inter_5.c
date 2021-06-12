@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 22:15:33 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/10 14:44:53 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/11 00:35:54 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ t_interl		*intersect_world(t_initpara w, t_ray r)
 
 	xs = NULL;
 	ini = NULL;
-	tmp = w.objects;
+	tmp = w.world_objects;
 	while (tmp->next)
 	{
 		ini = intersect(tmp->content, r);

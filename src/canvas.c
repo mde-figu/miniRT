@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 12:25:14 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/09 19:10:57 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/11 17:35:07 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,8 @@ void		write_pixel(t_canvas *canvas,
 	canvas->pixel[width][height].blue = color_init.blue;
 }
 
-t_canvas		create_canvas(int width, int height)
+void		create_canvas(t_canvas *canvas, int width, int height)
 {
-	t_canvas	canvas;
 	t_color		color_init;
 	int	i;
 	int j;
@@ -55,23 +54,24 @@ t_canvas		create_canvas(int width, int height)
 	color_init.red = 0.0;
 	color_init.green = 0.0;
 	color_init.blue = 0.0;
-	canvas.pixel = (t_color **)malloc(width * sizeof(t_color *));
+	canvas->width = width;
+	canvas->height = height;
 	i = 0;
 	j = 0;
-	canvas.width = width;
-	canvas.height = height;
-	while (j < height)
+	canvas->pixel = (t_color **)malloc(height * sizeof(t_color *));
+	while (++i < height)
 	{
-	i = 0;
-	canvas.pixel[j] = (t_color *)malloc(height * sizeof(t_color));
-		while (i <= width)
-		{
-			write_pixel(&canvas, i, j, color_init);
-			i++;
-		}
-	j++;
+		canvas->pixel[j] = (t_color *)malloc(height * sizeof(t_color));
 	}
-	return (canvas);
+	i = -1;
+	while (++i < height)
+	{
+		j = -1;
+		while (++j < width)
+		{
+		write_pixel(canvas, i, j, color_init);
+		}
+	}
 }
 
 void		free_canvas(t_canvas canvas)

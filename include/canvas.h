@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 16:00:31 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/10 19:01:34 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/11 14:47:36 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,7 +148,8 @@ typedef struct s_capinter
 	t_interl			*xs_cap;
 }						t_capinter;
 
-t_canvas			create_canvas(int width, int height);
+void				create_canvas(t_canvas *canvas, int width, int height);
+void				free_canvas(t_canvas canvas);
 void				list_canvas(t_canvasl **l, t_canvas canvas);
 t_ray				ray_to_pixel(t_camera camera, double px, double py);
 void				write_pixel(t_canvas *canvas,

@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 14:29:06 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/10 18:15:19 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/11 00:47:00 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ t_color		shadding(t_initpara w, t_comps comp)
 
 	c.c1 = create_color(0, 0, 0);
 	c.c2 = create_color(0, 0, 0);
-	tmp = w.lighting;
+	tmp = w.world_lights;
 	if (w.lightonoff)
 	{
 		while (tmp->next)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 12:25:42 by mirkios           #+#    #+#             */
-/*   Updated: 2021/02/20 17:57:17 by mirkios          ###   ########.fr       */
+/*   Updated: 2021/06/11 15:23:32 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,10 @@
 
 void		*ft_calloc(size_t nmemb, size_t size)
 {
-	void	*ptr;
-	size_t	i;
+	void	*array;
 
-	i = nmemb * size;
-	ptr = malloc(i);
-	if (!ptr)
+	array = (char *)malloc(size * nmemb);
+	if (!array)
 		return (NULL);
-	ft_bzero(ptr, i);
-	return (ptr);
+	return (ft_memset(array, 0, size * nmemb));
 }

@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 14:23:16 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/10 18:00:32 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/11 17:41:32 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,9 @@ typedef struct s_initpara
 	t_cameras	*cams;
 	t_canvasl	*canvas;
 	t_lights	*lighting;
+	t_lights	*world_lights;
 	t_objects	*objects;
+	t_objects	*world_objects;
 	t_imgg		*img;
 	t_imgg		*img_init;
 	void		*mlx;
@@ -58,6 +60,12 @@ typedef struct s_shadepar
 	t_comps				comps;
 	bool				shadowed;
 }						t_shadepar;
+
+typedef struct s_pixiter
+{
+	int					yy;
+	int					xx;
+}						t_pixiter;
 
 void		splash();
 
@@ -108,10 +116,12 @@ int			free_entry(char ***entry);
 void		image(t_initpara *conf);
 void		save(t_initpara conf);
 int			save_on(int argc);
-void		set_world(t_world *world, t_initpara initpara);
+void		set_world(t_initpara *initpara);
+void		ini_world(t_initpara *initpara, t_object content);
+void		create_light(t_initpara *initpara, t_light light);
 void		make_canvas(t_initpara *initpara);
 void		load_screen(t_initpara conf, bool savei);
-t_canvas	render(t_camera camera, t_initpara initpara);
+void		render(t_canvas *canvas, t_camera camera, t_initpara initpara);
 t_color		shadding(t_initpara w, t_comps comp);
 int			readfile(t_initpara *initpara, char *argv[]);
 

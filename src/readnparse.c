@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 12:09:58 by mirkios           #+#    #+#             */
-/*   Updated: 2021/06/10 14:08:02 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/11 18:07:16 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,17 @@
 
 static	void	init_para(t_initpara *initpara, t_line_fd *l)
 {
+	initpara->res_x = 0;
+	initpara->res_y = 0;
+	initpara->num_objects = 0;
+	initpara->save = 0;
+	initpara->lightonoff = false;
+	initpara->init_color = create_color(0, 0, 0);
+	initpara->ambient = create_color(0, 0, 0);
+	initpara->world_lights = NULL;
+	initpara->world_objects = NULL;
+	initpara->mlx = NULL;
+	initpara->win = NULL;
 	initpara->cams = NULL;
 	initpara->lighting = NULL;
 	initpara->objects = NULL;
