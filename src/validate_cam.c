@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 13:31:40 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/06 22:26:35 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/17 14:57:24 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		validate_cam(char **entry_t)
 		return (error_list(27));
 	if (!is_num(entry_t[3]))
 		return (error_list(28));
-	if (atof(entry_t[3]) < 0 || atof(entry_t[3]) > 180)
+	if (ft_atof(entry_t[3]) < 0 || ft_atof(entry_t[3]) > 180)
 		return (error_list(28));
 	return (1);
 }

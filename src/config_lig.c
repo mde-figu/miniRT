@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 12:42:01 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/07 21:50:27 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/17 16:25:19 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ void	config_lig(t_initpara *initpara, char *ps, char *br, char *col)
 	float		b;
 
 	tmp1 = ft_split(ps, ',');
-	p.x = atof(tmp1[0]);
-	p.y = atof(tmp1[1]);
-	p.z = atof(tmp1[2]);
-	b = atof(br);
+	p.x = ft_atof(tmp1[0]);
+	p.y = ft_atof(tmp1[1]);
+	p.z = ft_atof(tmp1[2]);
+	b = ft_atof(br);
 	tmp2 = ft_split(col, ',');
 	c.red = (double)ft_atoi(tmp2[0]);
 	c.green = (double)ft_atoi(tmp2[1]);

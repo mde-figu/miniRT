@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 19:51:41 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/15 19:54:01 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/17 16:24:59 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ static	t_matrix	posit_cy(char *position, char *diameter)
 	t_tuple		p;
 
 	temp = ft_split(position, ',');
-	p.x = atof(temp[0]);
-	p.y = atof(temp[1]);
-	p.z = atof(temp[2]);
+	p.x = ft_atof(temp[0]);
+	p.y = ft_atof(temp[1]);
+	p.z = ft_atof(temp[2]);
 	a = translation(p.x, p.y, p.z);
-	d = scaling(atof(diameter) / 2, 1, atof(diameter) / 2);
+	d = scaling(ft_atof(diameter) / 2, 1, ft_atof(diameter) / 2);
 	c = matrix_multi(a, d);
 	free_entry(&temp);
 	free_matrix(&a);
@@ -49,9 +49,9 @@ static	t_matrix	color_normal(t_object *o, char *cor, char *normal)
 	o->material.specular = 0;
 	free_entry(&temp);
 	temp = ft_split(normal, ',');
-	p.x = atof(temp[0]);
-	p.y = atof(temp[1]);
-	p.z = atof(temp[2]);
+	p.x = ft_atof(temp[0]);
+	p.y = ft_atof(temp[1]);
+	p.z = ft_atof(temp[2]);
 	o->normal = create_tuple(p.x, p.y, p.z, 1);
 	o->minimum = 0;
 	free_entry(&temp);
@@ -61,28 +61,28 @@ static	t_matrix	color_normal(t_object *o, char *cor, char *normal)
 
 void	config_cy(t_initpara *initpara, char **entry_t)
 {
-		t_object	o;
-		t_matrix	a;
-		t_matrix	d;
-		t_matrix	c;
-		t_obj_par	p;
-		float		s;
+	t_object	o;
+	t_matrix	a;
+	t_matrix	d;
+	t_matrix	c;
+	t_obj_par	p;
+	float		s;
 
-		p.position = entry_t[1];
-		p.normal = entry_t[2];
-		p.diameter = entry_t[3];
-		p.height = entry_t[4];
-		p.color = entry_t[5];
-		o = cylinder();
-		c = posit_cy(p.position, p.diameter);
-		a = color_normal(&o, p.color, p.normal);
-		d = matrix_multi(a, c);
-		copy_matrix(&o.transform, d);
-		free_matrix(&a);
-		free_matrix(&c);
-		free_matrix(&d);
-		s = atof(p.height);
-		o.maximum = s;
-		o.closed = true;
-		list_obj(&initpara->objects, o);
+	p.position = entry_t[1];
+	p.normal = entry_t[2];
+	p.diameter = entry_t[3];
+	p.height = entry_t[4];
+	p.color = entry_t[5];
+	o = cylinder();
+	c = posit_cy(p.position, p.diameter);
+	a = color_normal(&o, p.color, p.normal);
+	d = matrix_multi(a, c);
+	copy_matrix(&o.transform, d);
+	free_matrix(&a);
+	free_matrix(&c);
+	free_matrix(&d);
+	s = ft_atof(p.height);
+	o.maximum = s;
+	o.closed = true;
+	list_obj(&initpara->objects, o);
 }

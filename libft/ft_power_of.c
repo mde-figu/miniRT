@@ -6,13 +6,13 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 23:09:24 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/03/18 23:09:33 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/17 17:45:45 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_pow(int n, int exp)
+int	ft_pow_pos(int n, int exp)
 {
 	int result;
 

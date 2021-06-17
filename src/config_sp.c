@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 13:57:03 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/06 23:57:46 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/17 16:26:01 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ static	t_matrix	position(char *pos, double r)
 	t_tuple		p;
 
 	tmp = ft_split(pos, ',');
-	p.x = atof(tmp[0]);
-	p.y = atof(tmp[1]);
-	p.z = atof(tmp[2]);
+	p.x = ft_atof(tmp[0]);
+	p.y = ft_atof(tmp[1]);
+	p.z = ft_atof(tmp[2]);
 	free_entry(&tmp);
 	a = translation(p.x, p.y, p.z);
 	b = scaling(r, r, r);
@@ -52,7 +52,7 @@ void	config_sp(t_initpara *initpara, char *pos, char *dia, char *col)
 	double		r;
 
 	o = sphere();
-	r = atof(dia) / 2;
+	r = ft_atof(dia) / 2;
 	c = position(pos, r);
 	copy_matrix(&o.transform, c);
 	free_matrix(&c);

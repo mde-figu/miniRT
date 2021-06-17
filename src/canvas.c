@@ -6,13 +6,13 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 12:25:14 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/16 18:28:15 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/17 18:15:59 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/entries.h"
 
-void		store_img(t_imgg **l, t_data img)
+void	store_img(t_imgg **l, t_data img)
 {
 	t_imgg	*tmp;
 
@@ -43,36 +43,33 @@ void	write_pixel(t_canvas *canvas,
 	canvas->pixel[width][height] = color_init;
 }
 
-void	create_canvas(t_canvas *canvas, int width, int height)
+void	create_canvas(t_canvas *canvas, int w, int h)
 {
-	t_color		color_init;
+	t_color		black;
 	int			i;
 	int			j;
 
-	color_init.red = 0.0;
-	color_init.green = 0.0;
-	color_init.blue = 0.0;
-	canvas->width = width;
-	canvas->height = height;
-	i = 0;
-	j = 0;
-	canvas->pixel = (t_color **)malloc(height * sizeof(t_color *));
-	while (++i < height)
+	i = -1;
+	black = create_color(0, 0, 0);
+	canvas->width = w;
+	canvas->height = h;
+	canvas->pixel = (t_color **)malloc(sizeof(t_color *) * h);
+	while (++i < h)
 	{
-		canvas->pixel[j] = (t_color *)malloc(height * sizeof(t_color));
+		canvas->pixel[i] = (t_color *)malloc(sizeof(t_color) * w);
 	}
 	i = -1;
-	while (++i < height)
+	while (++i < h)
 	{
 		j = -1;
-		while (++j < width)
+		while (++j < w)
 		{
-			write_pixel(canvas, i, j, color_init);
+			canvas->pixel[i][j] = black;
 		}
 	}
 }
 
-void		free_canvas(t_canvas canvas)
+void	free_canvas(t_canvas canvas)
 {
 	int	j;
 

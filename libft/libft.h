@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 21:04:23 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/07 21:04:27 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/17 17:45:55 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,6 @@ int					maximum(int arg_size, ...);
 void				ft_putchar(char c);
 void				ft_putstr(char *str);
 void				print_multiple_char(int i, char c);
-int					ft_pow(int n, int exp);
+int					ft_pow_pos(int n, int exp);
 char				*ft_ftoa(float n, int precision);
 #endif

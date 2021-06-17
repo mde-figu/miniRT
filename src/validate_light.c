@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 16:20:30 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/08 01:04:29 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/17 16:22:05 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int validate_light(char **entry_t)
 		return(error_list(30));
 	if (!is_num(entry_t[2]))
 		return(error_list(31));
-	if (atof(entry_t[2]) < 0 || atof(entry_t[2]) > 1)
+	if (ft_atof(entry_t[2]) < 0 || ft_atof(entry_t[2]) > 1)
 		return(error_list(31));
 	if (!check_color(entry_t[3]))
 		return(error_list(32));

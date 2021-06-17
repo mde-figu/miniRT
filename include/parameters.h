@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 21:16:49 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/09 20:52:31 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/17 17:44:53 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,14 @@ typedef struct s_vtx_par
 	char				*p3;
 }						t_vtx_par;
 
-typedef struct			s_respar1
+typedef struct s_atofpar
 {
-	double				val;
+	int					i;
 	int					flag;
-}						t_respar1;
+	int					j;
+	double				val;
+	char				c;
+}						t_atofpar;
 
 typedef struct s_comps
 {
@@ -116,8 +119,7 @@ typedef struct s_iter
 
 int			str_ptr_len(char **s);
 t_color		lighting(t_colcomp p);
-double		atof(const char *nptr);
-int			ft_pow(int n, int exp);
-
+double		ft_atof(char *str);
+double		ft_pow(int n, int exp);
 
 #endif

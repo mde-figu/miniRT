@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 13:34:26 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/09 18:54:01 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/17 16:26:32 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ static t_matrix posit_sq(t_object *o, char *pos, char *col, char *size)
 	t_matrix	d;
 
 	tmp = ft_split(pos, ',');
-	p.x = atof(tmp[0]);
-	p.y = atof(tmp[1]);
-	p.z = atof(tmp[2]);
+	p.x = ft_atof(tmp[0]);
+	p.y = ft_atof(tmp[1]);
+	p.z = ft_atof(tmp[2]);
 	o->center = create_tuple(p.x, p.y, p.z, 1);
-	o->side = atof(size);
+	o->side = ft_atof(size);
 	free_entry(&tmp);
 	tmp = ft_split(col, ',');
 	c.red = (double)ft_atoi(tmp[0]);
@@ -44,9 +44,9 @@ static	t_tuple	normal(t_object *o, char *normal)
 	t_tuple	p;
 
 	tmp = ft_split(normal, ',');
-	p.x = atof(tmp[0]);
-	p.y = atof(tmp[1]);
-	p.z = atof(tmp[2]);
+	p.x = ft_atof(tmp[0]);
+	p.y = ft_atof(tmp[1]);
+	p.z = ft_atof(tmp[2]);
 	o->normal = create_tuple(p.x, p.y, p.z, 0);
 	free_entry(&tmp);
 	return (p);

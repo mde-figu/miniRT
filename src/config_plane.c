@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 20:44:36 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/09 17:03:59 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/17 16:25:38 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ static t_matrix plane_posit(t_object *o, char *pos, char *col)
 	t_color		c;
 
 	tmp = ft_split(pos, ',');
-	p.x = atof(tmp[0]);
-	p.y = atof(tmp[1]);
-	p.z = atof(tmp[2]);
+	p.x = ft_atof(tmp[0]);
+	p.y = ft_atof(tmp[1]);
+	p.z = ft_atof(tmp[2]);
 	free_entry(&tmp);
 	tmp = ft_split(col, ',');
 	c.red = (double)ft_atoi(tmp[0]);
