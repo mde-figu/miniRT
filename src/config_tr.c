@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 18:37:45 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/09 18:05:52 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/15 19:51:57 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,17 @@ static t_object	assign_vertex(char *v1, char *v2, char *v3)
 			create_tuple(p3.x, p3.y, p3.z, 1)));
 }
 
-void	config_tr(t_initpara *initpara, t_vtx_par pt, char **entry_t)
+void	config_tr(t_initpara *initpara, char **entry_t)
 {
 		t_object	o;
 		t_color		cc;
+		t_vtx_par	vt;
 		char		**tmp;
 
-		pt.p1 = entry_t[1];
-		pt.p2 = entry_t[2];
-		pt.p3 = entry_t[3];
-		o = assign_vertex(pt.p1, pt.p2, pt.p3);
+		vt.p1 = entry_t[1];
+		vt.p2 = entry_t[2];
+		vt.p3 = entry_t[3];
+		o = assign_vertex(vt.p1, vt.p2, vt.p3);
 		tmp = ft_split(entry_t[4], ',');
 		cc.red = (double)atof(tmp[0]);
 		cc.green = (double)atof(tmp[1]);

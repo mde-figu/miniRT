@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 19:51:41 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/08 00:58:03 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/15 19:54:01 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,13 @@ static	t_matrix	color_normal(t_object *o, char *cor, char *normal)
 	return (a);
 }
 
-void	config_cy(t_initpara *initpara, t_obj_par p, char **entry_t)
+void	config_cy(t_initpara *initpara, char **entry_t)
 {
 		t_object	o;
 		t_matrix	a;
 		t_matrix	d;
 		t_matrix	c;
+		t_obj_par	p;
 		float		s;
 
 		p.position = entry_t[1];

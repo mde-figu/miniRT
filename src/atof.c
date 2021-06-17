@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 20:14:56 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/06 22:52:04 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/16 18:22:24 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static int	ft_aux3(char *c, const char *nptr, t_respar1 *p, int *i)
 		++(*i);
 		*c = *(nptr + *i);
 	}
-	p->val = p->val * pow(10, j);
+	p->val = p->val * ft_pow(10, j);
 	return (1);
 }
 

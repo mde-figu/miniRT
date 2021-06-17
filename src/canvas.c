@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 12:25:14 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/11 17:35:07 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/16 18:28:15 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void		store_img(t_imgg **l, t_data img)
 	}
 }
 
-void		arrange_pixels(t_data *data, int x, int y, int color)
+void	arrange_pixels(t_data *data, int x, int y, int color)
 {
 	char	*dst;
 
@@ -37,19 +37,17 @@ void		arrange_pixels(t_data *data, int x, int y, int color)
 	*(unsigned int *)dst = color;
 }
 
-void		write_pixel(t_canvas *canvas,
+void	write_pixel(t_canvas *canvas,
 						int width, int height, t_color color_init)
 {
-	canvas->pixel[width][height].red = color_init.red;
-	canvas->pixel[width][height].green = color_init.green;
-	canvas->pixel[width][height].blue = color_init.blue;
+	canvas->pixel[width][height] = color_init;
 }
 
-void		create_canvas(t_canvas *canvas, int width, int height)
+void	create_canvas(t_canvas *canvas, int width, int height)
 {
 	t_color		color_init;
-	int	i;
-	int j;
+	int			i;
+	int			j;
 
 	color_init.red = 0.0;
 	color_init.green = 0.0;
@@ -69,7 +67,7 @@ void		create_canvas(t_canvas *canvas, int width, int height)
 		j = -1;
 		while (++j < width)
 		{
-		write_pixel(canvas, i, j, color_init);
+			write_pixel(canvas, i, j, color_init);
 		}
 	}
 }

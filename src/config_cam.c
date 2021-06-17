@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 21:12:55 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/09 18:17:02 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/16 17:24:20 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	config_cam(t_initpara *initpara, char *ps, char *n, char *fov)
 	t_tuple		p1;
 	t_tuple		p2;
 
-	c = camera(initpara->res_x, initpara->res_y, atof(fov) * (M_PI / 180.0));
+	c = camera(initpara->res_x, initpara->res_y, atof(fov) * (PIE / 180.0));
 	tmp = ft_split(ps, ',');
 	p1.x = atof(tmp[0]);
 	p1.y = atof(tmp[1]);
@@ -32,8 +32,8 @@ void	config_cam(t_initpara *initpara, char *ps, char *n, char *fov)
 	p2.z = atof(tmp[2]);
 	free_entry(&tmp);
 	m = transform_cam(create_tuple(p1.x, p1.y, p1.z, 1),
-				create_tuple(p2.x, p2.y, p2.z, 1),
-				create_tuple(0.001, 1, 0.001, 0));
+			create_tuple(p2.x, p2.y, p2.z, 1),
+			create_tuple(0.001, 1, 0.001, 0));
 	copy_matrix(&c.transform, m);
 	free_matrix(&m);
 }

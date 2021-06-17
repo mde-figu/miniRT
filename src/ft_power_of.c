@@ -6,13 +6,13 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 23:09:24 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/04/30 22:32:46 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/16 18:53:06 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_pow(int n, int exp)
 {
-	int result;
+	int	result;
 
 	result = 1;
 	while (exp-- > 0)

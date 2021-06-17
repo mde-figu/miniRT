@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:40:55 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/08 01:07:42 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/16 17:04:19 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	is_unit(double x, double y, double z)
 int	check_normal(char *str)
 {
 	char	**tmp;
-	t_tuple t;
+	t_tuple	t;
 
 	tmp = ft_split(str, ',');
 	if (str_ptr_len(tmp) != 3)

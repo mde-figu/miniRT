@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 19:34:22 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/09 19:12:06 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/16 18:17:56 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 static int	config_para_check(char **entry_t)
 {
-	int len;
+	int	len;
+
 	if (!entry_t)
 		return (0);
 	len = 0;

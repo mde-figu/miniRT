@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 14:34:49 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/09 18:16:00 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/16 17:31:17 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ t_camera	camera(int hsize, int vsize, double field_of_view)
 	return (c);
 }
 
-
 void	cameras(t_cameras **l, t_camera c)
 {
 	t_cameras	*tmp;
@@ -85,7 +84,7 @@ static	void	aux(t_matrix *orientation, t_orientcam p)
 
 t_matrix	transform_cam(t_tuple from, t_tuple to, t_tuple up)
 {
-	t_orientcam		p;
+	t_orientcam	p;
 	t_matrix	orientation;
 	t_matrix	t;
 	t_matrix	resp;

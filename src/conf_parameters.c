@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 00:47:50 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/09 18:55:27 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/15 19:53:00 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 void	conf_parameters(t_initpara **initpara, char *line)
 {
-	char	**entry_t;
-	t_obj_par	p;
-	t_vtx_par	vt;
+	char		**entry_t;
 
 	entry_t = ft_split(line, ' ');
 	if (ft_memcmp("R", entry_t[0], 2) == 0)
@@ -34,9 +32,9 @@ void	conf_parameters(t_initpara **initpara, char *line)
 	if (ft_memcmp("sq", entry_t[0], 3) == 0)
 		config_sq(*initpara, entry_t[1], entry_t[2], entry_t[3], entry_t[4]);
 	if (ft_memcmp("tr", entry_t[0], 3) == 0)
-		config_tr(*initpara, vt, entry_t);
+		config_tr(*initpara, entry_t);
 	if (ft_memcmp("cy", entry_t[0], 3) == 0)
-		config_cy(*initpara, p, entry_t);
+		config_cy(*initpara, entry_t);
 	free_entry(&entry_t);
 }
 /* quando passo entry_t[1] estou mandando um vetor do array, recebo com 

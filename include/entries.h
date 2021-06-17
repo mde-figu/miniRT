@@ -6,13 +6,14 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 14:23:16 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/11 17:41:32 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/15 19:54:50 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ENTRIES_H
 # define ENTRIES_H
 # define EPSILON 0.00001
+# define PIE 3.1415926535897932384626433832795028841971693993751058209749445
 # include "../libft/libft.h"
 # include "../get_next_line/get_next_line_bonus.h"
 # include "../minilibx/minilibx-linux/mlx.h"
@@ -20,6 +21,7 @@
 # include <stdbool.h>
 # include <stdio.h>
 # include <stdint.h>
+# include <unistd.h>
 # include <string.h>
 # include <math.h>
 # include "components.h"
@@ -88,13 +90,13 @@ void		conf_parameters(t_initpara **initpara, char *line);
 void		config_res(t_initpara *initpara, char *res_x, char *res_y);
 void		config_amb(t_initpara *initpara, char *amb_ratio, char *amb_color);
 void		config_cam(t_initpara *initpara, char *ps, char *n, char *fov);
-void		config_cy(t_initpara *initpara, t_obj_par p, char **entry_t);
+void		config_cy(t_initpara *initpara, char **entry_t);
 void		config_lig(t_initpara *initpara, char *ps, char *br, char *col);
 void		config_pl(t_initpara *initpara, char *pos, char *n, char *col);
 void		config_sp(t_initpara *initpara, char *pos, char *dia, char *col);
 void		config_sq(t_initpara *initpara, char *pos, char *n,
 						char *s, char *col);
-void		config_tr(t_initpara *initpara, t_vtx_par pt, char **entry_t);
+void		config_tr(t_initpara *initpara, char **entry_t);
 
 int			check_coordinate(char *str);
 int			check_normal(char *str);

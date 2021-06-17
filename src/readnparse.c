@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 12:09:58 by mirkios           #+#    #+#             */
-/*   Updated: 2021/06/11 18:07:16 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/16 13:21:13 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static	void	init_para(t_initpara *initpara, t_line_fd *l)
 {
-	initpara->res_x = 0;
-	initpara->res_y = 0;
+	initpara->res_x = 10;
+	initpara->res_y = 10;
 	initpara->num_objects = 0;
 	initpara->save = 0;
 	initpara->lightonoff = false;
@@ -48,7 +48,7 @@ static int	ft_aux(char *line, t_initpara *initpara)
 
 int	readfile(t_initpara *initpara, char *argv[])
 {
-	t_line_fd l;
+	t_line_fd	l;
 
 	init_para(initpara, &l);
 	l.fd = open(argv[1], O_RDONLY);
@@ -59,8 +59,8 @@ int	readfile(t_initpara *initpara, char *argv[])
 	{
 		if (l.line != NULL && *l.line != '\0' && *l.line != '#')
 		{
-			if(!validate_line(l.line))
-				return(false);
+			if (!validate_line(l.line))
+				return (false);
 			conf_parameters(&initpara, l.line);
 			free(l.line);
 		}

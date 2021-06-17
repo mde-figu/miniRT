@@ -6,7 +6,7 @@
 #    By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/03 20:08:17 by mde-figu          #+#    #+#              #
-#    Updated: 2021/06/10 18:50:40 by mde-figu         ###   ########.fr        #
+#    Updated: 2021/06/15 19:41:50 by mde-figu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,9 +21,9 @@ MLX_INC_PATH = -I ./minilibx/mlx-linux
 MLX_LIBS = -lXext -lX11 -lm -lz
 
 
-CC = gcc
+CC = clang
 FLAGS = -Wall -Wextra -Werror
-LIB_NAME = libvectors.a
+LIB_NAME = lib.a
 LIBFT_NAME = libft.a
 GNL_NAME = get_next_line.a
 MLX_NAME = libmlx_Linux.a
