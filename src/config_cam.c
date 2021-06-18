@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 21:12:55 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/17 18:17:53 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/17 19:00:27 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ void	config_cam(t_initpara *initpara, char *ps, char *n, char *fov)
 			create_tuple(p2.x, p2.y, p2.z, 1),
 			create_tuple(0.001, 1, 0.001, 0));
 	copy_matrix(&c.transform, m);
+	cameras(&initpara->cams, c);
 	free_matrix(&m);
 }

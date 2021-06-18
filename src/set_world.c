@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 13:41:29 by mirkios           #+#    #+#             */
-/*   Updated: 2021/06/11 13:37:10 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/17 19:08:19 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	set_world(t_initpara *initpara)
 	t_lights	*tmp_l;
 
 	initpara->world_objects = NULL;
-	initpara->lighting = NULL;
+	initpara->world_lights = NULL;
 	tmp = initpara->objects;
 	while (tmp->next)
 	{

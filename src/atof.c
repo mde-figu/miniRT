@@ -6,24 +6,31 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 20:14:56 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/17 17:34:08 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/17 20:45:18 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/entries.h"
 
+static void	atofinit(t_atofpar *atofpar)
+{
+	atofpar->i = 0;
+	atofpar->j = 0;
+	atofpar->val = 0;
+	atofpar->flag = 0;
+	atofpar->minus = 1;
+}
+
 double	ft_atof(char *str)
 {
 	t_atofpar	atofpar;
 
-	atofpar.i = 0;
-	atofpar.j = 0;
-	atofpar.val = 0;
-	atofpar.flag = 0;
+	atofinit(&atofpar);
 	while ((atofpar.c = *(str + atofpar.i)) !='\0')
 	{
-//      if ((c<'0')||(c>'9')) return 0;
-		if (atofpar.c != '.')
+		if (atofpar.c == '-')
+			atofpar.minus = -1;
+		if (atofpar.c != '.' && atofpar.c != '-')
 		{
 			atofpar.val = (atofpar.val * 10) + (atofpar.c - '0');
 			if (atofpar.flag == 1)
@@ -38,5 +45,5 @@ double	ft_atof(char *str)
 		++atofpar.i;
 	}
 	atofpar.val = atofpar.val * ft_pow(10, atofpar.j);
-	return (atofpar.val);
+	return (atofpar.val * atofpar.minus);
 }

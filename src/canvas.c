@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 12:25:14 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/17 18:15:59 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/17 19:40:29 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ void	create_canvas(t_canvas *canvas, int w, int h)
 	while (++i < h)
 	{
 		j = -1;
+		if (i % (h / 2) == 0)
+			printf("|");
 		while (++j < w)
 		{
 			canvas->pixel[i][j] = black;

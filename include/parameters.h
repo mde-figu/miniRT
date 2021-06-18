@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 21:16:49 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/17 17:44:53 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/17 20:40:29 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ typedef struct s_atofpar
 	int					j;
 	double				val;
 	char				c;
+	int					minus;
 }						t_atofpar;
 
 typedef struct s_comps

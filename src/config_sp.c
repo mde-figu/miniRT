@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 13:57:03 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/17 16:26:01 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/17 20:12:16 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ static	t_matrix	position(char *pos, double r)
 	a = translation(p.x, p.y, p.z);
 	b = scaling(r, r, r);
 	c = matrix_multi(a, b);
+	free_matrix(&a);
+	free_matrix(&b);
 	return (c);
 }
 

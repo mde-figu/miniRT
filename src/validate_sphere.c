@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 20:54:14 by mirkios           #+#    #+#             */
-/*   Updated: 2021/06/17 16:22:24 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/17 19:57:16 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	validate_sphere(char **entry_t)
 		return (error_list(39));
 	if (ft_atof(entry_t[2]) < 0)
 		return (error_list(40));
-	if (check_color(entry_t[3]))
+	if (!check_color(entry_t[3]))
 		return (error_list(41));
 	return (1);
 }

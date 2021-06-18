@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 18:43:25 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/09 17:14:50 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/17 22:13:54 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ t_tuple	subtract_tuple(t_tuple t1, t_tuple t2)
 	t_tuple	new;
 
 	if ((t1.w != 1 && t1.w != 0) || (t2.w != 1 && t2.w != 0))
-		error_list(10);
+		error_list(11);
 	new.x = t1.x - t2.x;
 	new.y = t1.y - t2.y;
 	new.z = t1.z - t2.z;

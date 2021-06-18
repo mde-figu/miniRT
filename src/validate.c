@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 19:55:47 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/16 18:04:46 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/17 19:23:45 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	validate_line(char *line)
 	entry_t = ft_split(line, ' ');
 	if (ret == 0)
 		ret = validate_config(entry_t);
-	else if (ret == 0)
+	if (ret == 0)
 		ret = validate_geometry(entry_t);
 	else
 		error_list(20);

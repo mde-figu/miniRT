@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 13:06:12 by mirkios           #+#    #+#             */
-/*   Updated: 2021/06/17 16:21:25 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/17 21:30:32 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	validate_cylinder(char **entry_t)
 		return (error_list(51));
 	if (!check_normal(entry_t[2]))
 		return (error_list(52));
-	if (!!is_num(entry_t[3]))
+	if (!is_num(entry_t[3]))
 		return (error_list(53));
 	return (1);
 }

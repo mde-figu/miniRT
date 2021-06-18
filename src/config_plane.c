@@ -6,13 +6,13 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 20:44:36 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/17 16:25:38 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/17 19:17:32 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/entries.h"
 
-static t_matrix plane_posit(t_object *o, char *pos, char *col)
+static t_matrix	plane_posit(t_object *o, char *pos, char *col)
 {
 	char		**tmp;
 	t_tuple		p;
@@ -42,9 +42,9 @@ static t_matrix	normal(char *normal)
 	t_matrix	a;
 
 	tmp = ft_split(normal, ',');
-	p.x = atof(tmp[0]);
-	p.y = atof(tmp[1]);
-	p.z = atof(tmp[2]);
+	p.x = ft_atof(tmp[0]);
+	p.y = ft_atof(tmp[1]);
+	p.z = ft_atof(tmp[2]);
 	free_entry(&tmp);
 	a = rotate(create_tuple(p.x, p.y, p.z, 0));
 	return (a);

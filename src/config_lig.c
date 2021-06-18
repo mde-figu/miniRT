@@ -29,7 +29,7 @@ void	config_lig(t_initpara *initpara, char *ps, char *br, char *col)
 	c.red = (double)ft_atoi(tmp2[0]);
 	c.green = (double)ft_atoi(tmp2[1]);
 	c.blue = (double)ft_atoi(tmp2[2]);
-	light(&initpara->lighting, point_light(create_tuple(p.x, p.y, p.z, 1), 
+	light(&initpara->lighting, point_light(create_tuple(p.x, p.y, p.z, 1),
 				scalar_color(scalar_color(c, 0.003921569), b)));
 	free_entry(&tmp1);
 	free_entry(&tmp2);
