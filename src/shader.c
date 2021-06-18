@@ -6,22 +6,22 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 14:29:06 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/11 00:47:00 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/18 00:40:38 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/entries.h"
 
-bool		the_shadow_knows(t_light light, t_initpara w, t_tuple point)
+bool	the_shadow_knows(t_light light, t_initpara w, t_tuple point)
 {
 	t_tuple			v;
 	t_raypara		p;
 	t_ray			r;
-	t_interl			*intersections;
+	t_interl		*intersections;
 	t_intersect		h;
 
 	v = subtract_tuple(light.position, point);
-	p.distance = tuple_mag(v);
+	p.distance = 1 / tuple_rsqrt(v);
 	p.direction = quake_normalize(v);
 	r = ray(point, p.direction);
 	intersections = intersect_world(w, r);
@@ -56,7 +56,7 @@ static t_color	color_mix(t_light l, t_colcomp *i, t_color c2, t_shadepar p)
 	return (c2);
 }
 
-t_color		shadding(t_initpara w, t_comps comp)
+t_color		shadding(t_initpara initpara, t_comps comp)
 {
 	t_lights	*tmp;
 	t_shadepar	p;
@@ -65,25 +65,25 @@ t_color		shadding(t_initpara w, t_comps comp)
 
 	c.c1 = create_color(0, 0, 0);
 	c.c2 = create_color(0, 0, 0);
-	tmp = w.world_lights;
-	if (w.lightonoff)
+	tmp = initpara.world_lights;
+	if (initpara.lightonoff)
 	{
 		while (tmp->next)
 		{
-			p.shadowed = the_shadow_knows(tmp->content, w, comp.over_point);
-			ft_init(&i, w, comp, tmp->content);
+			p.shadowed = the_shadow_knows(tmp->content, initpara, comp.over_point);
+			ft_init(&i, initpara, comp, tmp->content);
 			i.in_shadow = p.shadowed;
 			c.c1 = lighting(i);
 			c.c2 = add_color(c.c1, c.c2);
 			tmp = tmp->next;
 		}
-		p.world =  w;
+		p.world = initpara;
 		p.comps = comp;
 		c.c2 = color_mix(tmp->content, &i, c.c2, p);
 		return (c.c2);
 	}
 	else
-		return (w.ambient);
+		return (initpara.ambient);
 }
 
 t_tuple	reflect(t_tuple in, t_tuple normal)

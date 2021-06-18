@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 20:37:15 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/07 21:55:22 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/18 02:01:42 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static int	touch_bmp(char *filename)
 
 	name = ft_strjoin(filename, ".bmp");
 	fd = open(name, O_CREAT | O_WRONLY | O_TRUNC, 0666); //mode tem a mesma caracteristica que o chmod
-	if(!fd)
+	if (!fd)
 		return (error_list(60));
 	free(name);
 	return (fd);

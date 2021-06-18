@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 16:00:31 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/16 13:52:47 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/17 22:49:23 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ typedef struct s_bmpheader
 //	t_rt			*rt;
 //}					t_mlx;
 
-typedef struct	s_data
+typedef struct s_data
 {
 	void		*image;
 	char		*address;
@@ -60,7 +60,7 @@ typedef struct	s_data
 	int			endian;
 }				t_data;
 
-typedef struct	s_imgg
+typedef struct s_imgg
 {
 	t_data		content;
 	struct	s_imgg *next;

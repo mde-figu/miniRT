@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 18:53:00 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/09 20:32:40 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/17 22:36:45 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ t_object	triangle(int id, t_tuple p1, t_tuple p2, t_tuple p3)
 
 	p.id = id;
 	p.type = "triangle";
+	p.center = create_tuple(0, 0, 0, 1);
 	p.transform = identity();
 	p.material.color = create_color(1, 1, 1);
 	p.material.ambient = 0.1;

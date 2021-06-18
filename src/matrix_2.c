@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 11:13:09 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/10 18:37:41 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/18 02:25:16 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ t_matrix	scaling(double x, double y, double z)
 {
 	t_matrix	a;
 
-		a = matrix(4);
+	a = matrix(4);
 	write_matrix(&a, 0, 0, x);
 	write_matrix(&a, 0, 1, 0.0);
 	write_matrix(&a, 0, 2, 0.0);

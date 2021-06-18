@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 18:43:18 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/10 18:24:13 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/18 00:31:22 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ double	tuple_mag(t_tuple t1)
 	double	tmp;
 
 	if (t1.w != 1 && t1.w != 0)
-		error_list(10);
+		error_list(12);
 	tmp = ((t1.x) * (t1.x)) + ((t1.y) * (t1.y)) + ((t1.z) * (t1.z));
 	magnitude = sqrt(tmp);
 	return (magnitude);
@@ -59,7 +59,7 @@ t_tuple	quake_normalize(t_tuple t1)
 {
 	double	magnitude;
 
-	magnitude = (double)tuple_rsqrt(t1);
+	magnitude = tuple_rsqrt(t1);
 	t1.x = t1.x * magnitude;
 	t1.y = t1.y * magnitude;
 	t1.z = t1.z * magnitude;

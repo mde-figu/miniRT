@@ -6,13 +6,13 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 12:53:58 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/11 00:34:38 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/18 00:54:56 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/entries.h"
 
-static void check_xs(t_interl **xs, t_interl *init)
+static void	check_xs(t_interl **xs, t_interl *init)
 {
 	if (init != NULL)
 	{
@@ -52,7 +52,7 @@ t_interl	*world_intersect(t_initpara w, t_ray r)
 
 t_color	list_color(t_initpara initpara, t_ray ray)
 {
-	t_interl		*wwl;
+	t_interl	*wwl;
 	t_color		c;
 	t_intersect	in;
 	t_comps		comps;

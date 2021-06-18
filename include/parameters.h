@@ -6,18 +6,14 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 21:16:49 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/17 20:40:29 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/18 00:18:13 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PARAMETERS_H
 # define PARAMETERS_H
 
-#include "entries.h"
-#include <stdio.h>
-#include <string.h>
-#include <math.h>
-
+# include "entries.h"
 
 typedef struct s_obj_par
 {
@@ -81,8 +77,8 @@ typedef struct s_reflexpar
 
 typedef struct s_reflex
 {
-	float				reflect_dot_eye;
-	float				factor;
+	double				reflect_dot_eye;
+	double				factor;
 }						t_reflex;
 
 typedef struct s_colmix

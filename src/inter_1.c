@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 12:55:33 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/17 21:24:40 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/18 01:58:35 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ t_intersect	intersection(double t, t_object o)
 
 t_interl	*intersect_plane(t_object p, t_ray ray)
 {
-	t_interl			*xs;
+	t_interl		*xs;
 	t_intersect		i;
 	double			t;
 
 	xs = NULL;
 	if (fabs(ray.direction.y) < EPSILON)
 		return (xs);
-	t = ray.origin.y / ray.direction.y;
+	t = -ray.origin.y / ray.direction.y;
 	i = intersection(t, p);
 	xs = list_new_inter(i);
 	return (xs);
@@ -39,7 +39,7 @@ t_interl	*intersect_plane(t_object p, t_ray ray)
 
 t_interl	*intersect_square(t_object p, t_ray ray)
 {
-	t_interl			*xs;
+	t_interl		*xs;
 	t_intersect		i;
 	double			t;
 	t_tuple			point;

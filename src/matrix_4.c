@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 13:13:35 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/10 18:36:26 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/18 02:38:29 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,21 @@ t_matrix	inverse(t_matrix a)
 	c = 0;
 	b = matrix(a.dim);
 	if (!is_invertible(a))
+		return (b);
+	else
 	{
-		error_list(57);
+		p.i = -1;
+		while (++(p.i) < a.dim)
+		{
+			p.j = -1;
+			while (++(p.j) < a.dim)
+			{
+				c = cofactor(a, p.i, p.j);
+				b.element[p.j][p.i] = c / d;
+			}
+		}
 		return (b);
 	}
-	p.i = -1;
-	while (++(p.i) < a.dim)
-	{
-		p.j = -1;
-		while (++(p.j) < a.dim)
-		{
-			c = cofactor(a, p.i, p.j);
-			b.element[p.j][p.i] = c / d;
-		}
-	}
-	return (b);
 }
 
 bool	is_invertible(t_matrix a)

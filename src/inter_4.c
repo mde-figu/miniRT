@@ -6,15 +6,16 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 21:45:39 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/07 23:15:56 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/17 23:06:47 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/entries.h"
 
-static void aux_three(t_cyinter p, t_capinter *c, t_object cyl)
+static void 	aux_three(t_cyinter p, t_capinter *c, t_object cyl)
 {
-	t_interl *ii;
+	t_interl	*ii;
+
 	if ((cyl.minimum < p.y1) && (p.y1 < cyl.maximum))
 	{
 		if (list_size_inter(c->xs) == 1)
@@ -31,7 +32,7 @@ static void aux_three(t_cyinter p, t_capinter *c, t_object cyl)
 	}
 }
 
-static void aux_two(t_cyinter p, t_ray ray, t_capinter *c, t_object cyl)
+static void	aux_two(t_cyinter p, t_ray ray, t_capinter *c, t_object cyl)
 {
 	if (p.t0 > p.t1)
 	{

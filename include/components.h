@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 20:06:01 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/11 13:37:37 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/18 01:43:43 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ typedef struct s_objects
 	struct s_objects	*next;
 }						t_objects;
 
-
 typedef struct s_light
 {
 	t_tuple				position;
@@ -143,7 +142,8 @@ t_tuple			tuple_normalize(t_tuple t1);
 t_tuple			quake_normalize(t_tuple t1);
 t_tuple			cross_product(t_tuple t1, t_tuple t2);
 double			dot_product(t_tuple i, t_tuple j);
-t_tuple 		normal_placement(t_object o, t_tuple point);
+t_tuple			normal_placement(t_object o, t_tuple point);
+t_tuple			place_normal(t_object o, t_tuple v);
 t_material		mat_par(void);
 
 t_matrix		matrix(int dim);

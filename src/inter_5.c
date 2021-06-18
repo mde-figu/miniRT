@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 22:15:33 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/11 00:35:54 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/18 00:03:18 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,16 @@ static bool	check_cap(t_ray ray, double t)
 	r = false;
 	x = ray.origin.x + t * ray.direction.x;
 	z = ray.origin.z + t * ray.direction.z;
-	if (x * x + z * z -1 <= EPSILON)
+	if (x * x + z * z - 1 <= EPSILON)
 		r = true;
 	return (r);
 }
 
-t_interl *intersect_caps(t_object cyl, t_ray ray)
+t_interl	*intersect_caps(t_object cyl, t_ray ray)
 {
-	t_intersect i1;
-	t_interl		*xs;
-	t_interl		*ii;
+	t_intersect	i1;
+	t_interl	*xs;
+	t_interl	*ii;
 	double		t;
 
 	xs = NULL;
@@ -65,11 +65,11 @@ static void	aux(t_interl **xs, t_interl *init)
 	}
 }
 
-t_interl		*intersect_world(t_initpara w, t_ray r)
+t_interl	*intersect_world(t_initpara w, t_ray r)
 {
 	t_interl		*xs;
 	t_interl		*ini;
-	t_objects	*tmp;
+	t_objects		*tmp;
 
 	xs = NULL;
 	ini = NULL;

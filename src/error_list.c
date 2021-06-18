@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 14:55:01 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/17 22:14:10 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/17 22:27:32 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,12 @@ int		error_list(int error_nbr)
 		printf("could not add tuple, W parameter is wrong\n");
 	if (error_nbr == 11)
 		printf("could not subtract tuple, W parameter is wrong\n");
+	if (error_nbr == 12)
+		printf("could not magnitude from tuple, W parameter is wrong\n");
+	if (error_nbr == 13)
+		printf("could not negate tuple, W parameter is wrong\n");
+	if (error_nbr == 14)
+		printf("could not scale tuple, W parameter is wrong\n");
 	if (error_nbr == 20)
 		printf("Invalid code in .rt file, use:R,A,c,l,pl,sp,sq,cy or tr");
 	if (error_nbr == 21)

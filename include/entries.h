@@ -6,14 +6,14 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 14:23:16 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/17 21:26:05 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/18 00:36:24 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ENTRIES_H
 # define ENTRIES_H
-# define EPSILON 0.00001
-# define PIE 3.1415926535897932384626433832795028841971693993751058209749445
+# define EPSILON 0.0001
+# define PIE 3.14159265358979323846264338
 # include "../libft/libft.h"
 # include "../get_next_line/get_next_line_bonus.h"
 # include "../minilibx/minilibx-linux/mlx.h"
@@ -69,7 +69,7 @@ typedef struct s_pixiter
 	int					xx;
 }						t_pixiter;
 
-void		splash();
+void		splash(void);
 
 int			error_list(int error_nbr);
 bool		validate(int argc, char *argv[]);
