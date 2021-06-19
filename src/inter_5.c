@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 22:15:33 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/18 00:03:18 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/19 01:35:22 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,6 @@ t_interl	*intersect_world(t_initpara w, t_ray r)
 	}
 	ini = intersect(tmp->content, r);
 	aux(&xs, ini);
-	bubblesort(&xs);
+	//bubblesort(&xs);
 	return (xs);
 }

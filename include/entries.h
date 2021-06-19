@@ -6,13 +6,13 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 14:23:16 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/18 00:36:24 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/18 21:08:11 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ENTRIES_H
 # define ENTRIES_H
-# define EPSILON 0.0001
+# define EPSILON 0.00001
 # define PIE 3.14159265358979323846264338
 # include "../libft/libft.h"
 # include "../get_next_line/get_next_line_bonus.h"
@@ -95,7 +95,7 @@ void		config_lig(t_initpara *initpara, char *ps, char *br, char *col);
 void		config_pl(t_initpara *initpara, char *pos, char *n, char *col);
 void		config_sp(t_initpara *initpara, char *pos, char *dia, char *col);
 void		config_sq(t_initpara *initpara, char *pos, char *n,
-						char *s, char *col);
+				char *s, char *col);
 void		config_tr(t_initpara *initpara, char **entry_t);
 
 int			check_coordinate(char *str);
@@ -117,12 +117,12 @@ t_interl	*intersect_world(t_initpara w, t_ray r);
 int			free_entry(char ***entry);
 void		image(t_initpara *conf);
 void		save(t_initpara conf);
-int			save_on(int argc);
+void		save_on(int argc, t_initpara *initpara);
 void		set_world(t_initpara *initpara);
 void		ini_world(t_initpara *initpara, t_object content);
 void		create_light(t_initpara *initpara, t_light light);
 void		make_canvas(t_initpara *initpara);
-void		load_screen(t_initpara conf, bool savei);
+void		load_screen(t_initpara initpara);
 void		render(t_canvas *canvas, t_camera camera, t_initpara initpara);
 t_color		shadding(t_initpara w, t_comps comp);
 int			readfile(t_initpara *initpara, char *argv[]);

@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 12:25:14 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/17 19:40:29 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/18 20:14:40 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	arrange_pixels(t_data *data, int x, int y, int color)
 void	write_pixel(t_canvas *canvas,
 						int width, int height, t_color color_init)
 {
-	canvas->pixel[width][height] = color_init;
+	canvas->pixel[height][width] = color_init;
 }
 
 void	create_canvas(t_canvas *canvas, int w, int h)
@@ -62,8 +62,6 @@ void	create_canvas(t_canvas *canvas, int w, int h)
 	while (++i < h)
 	{
 		j = -1;
-		if (i % (h / 2) == 0)
-			printf("|");
 		while (++j < w)
 		{
 			canvas->pixel[i][j] = black;

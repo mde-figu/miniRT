@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 18:43:18 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/18 00:31:22 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/18 22:02:35 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,15 @@ double	tuple_mag(t_tuple t1)
 	return (magnitude);
 }
 
-float	tuple_rsqrt(t_tuple t1)
+double	tuple_rsqrt(t_tuple t1)
 {
 	long		i;
 	float		x2;
 	float		y;
-	float		number;
+	double		number;
 	const float	threehalfs = 1.5F;
 
-	number = ((t1.x) * (t1.x)) + ((t1.y) * (t1.y)) + ((t1.z) * (t1.z));
+	number = ((t1.x) * (t1.x)) + ((t1.y) * (t1.y)) + ((t1.z) * (t1.z)) + ((t1.w) * (t1.w));
 	x2 = number * 0.5F;
 	y = number;
 	i = *(long *) &y;
@@ -40,7 +40,7 @@ float	tuple_rsqrt(t_tuple t1)
 	y = *(float *) &i;
 	y = y * (threehalfs - (x2 * y * y));
 	y = y * (threehalfs - (x2 * y * y));
-	return (y);
+	return ((double)y);
 }
 
 t_tuple	tuple_normalize(t_tuple t1)

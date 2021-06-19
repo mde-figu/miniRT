@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 13:34:15 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/18 00:21:32 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/18 22:14:18 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void	ft_int(t_reflexpar *q, t_colcomp p, double *light_dot_normal)
 {
 	q->black = create_color(0, 0, 0);
 	q->effective_color = hadamard_product(p.material.color, p.light.intensity);
-	q->lightv = quake_normalize(subtract_tuple(p.light.position, p.position));
+	q->lightv = tuple_normalize(subtract_tuple(p.light.position, p.position));
 	q->ambient = scalar_color(q->effective_color, p.material.ambient);
 	q->ambient = add_color(q->ambient, p.a);
 	*light_dot_normal = dot_product(q->lightv, p.normalv);

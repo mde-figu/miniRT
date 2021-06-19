@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 14:29:06 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/18 00:40:38 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/18 22:39:44 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ bool	the_shadow_knows(t_light light, t_initpara w, t_tuple point)
 	t_intersect		h;
 
 	v = subtract_tuple(light.position, point);
-	p.distance = 1 / tuple_rsqrt(v);
-	p.direction = quake_normalize(v);
+	p.distance = tuple_mag(v);
+	p.direction = tuple_normalize(v);
 	r = ray(point, p.direction);
 	intersections = intersect_world(w, r);
 	h = ray_hit(intersections);

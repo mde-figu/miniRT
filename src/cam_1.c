@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/16 14:34:49 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/16 17:31:17 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/18 22:25:38 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,8 @@ t_matrix	transform_cam(t_tuple from, t_tuple to, t_tuple up)
 	t_matrix	t;
 	t_matrix	resp;
 
-	p.forward = quake_normalize(subtract_tuple(to, from));
-	p.upn = quake_normalize(up);
+	p.forward = tuple_normalize(subtract_tuple(to, from));
+	p.upn = tuple_normalize(up);
 	p.left = cross_product(p.forward, p.upn);
 	p.true_up = cross_product(p.left, p.forward);
 	orientation = matrix(4);

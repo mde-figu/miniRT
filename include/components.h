@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 20:06:01 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/18 01:43:43 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/18 21:34:14 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,7 +136,7 @@ t_tuple			subtract_tuple(t_tuple t1, t_tuple t2);
 t_tuple			negate_tuple(t_tuple t1);
 t_tuple			scale_tuple(t_tuple t1, double scale);
 double			tuple_mag(t_tuple t1);
-float			tuple_rsqrt(t_tuple t1);
+double			tuple_rsqrt(t_tuple t1);
 float			q_rsqrt(float number);
 t_tuple			tuple_normalize(t_tuple t1);
 t_tuple			quake_normalize(t_tuple t1);

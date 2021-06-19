@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 21:16:49 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/18 00:18:13 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/19 00:48:03 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,9 @@ typedef struct s_iter
 	int					j;
 	bool				swapped;
 	int					n;
+	//t_interl			**tmp;
+//	t_interl			*p1;
+//	t_interl			*p2;
 }						t_iter;
 
 int			str_ptr_len(char **s);

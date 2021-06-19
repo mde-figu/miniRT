@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 20:23:09 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/18 02:01:28 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/18 20:09:10 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ void	render(t_canvas *canvas, t_camera camera, t_initpara initpara)
 	while (y < camera.vsize - 1)
 	{
 		x = 0;
-		if (y % (camera.vsize) == 0)
-			printf("|");
 		while (x <camera.hsize - 1)
 		{
 			ray = ray_to_pixel(camera, x, y);

@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 19:04:49 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/17 22:56:41 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/18 22:30:41 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ t_interl	*intersect_sphere(t_object s, t_ray ray)
 	sphere_ray(&p, ray_t, s);
 	if (p.discriminant > 0)
 	{
-		p.i1.t = (-p.p.y - (1 / q_rsqrt(p.discriminant)) / (2 * p.p.x));
+		p.i1.t = (-p.p.y - sqrt(p.discriminant) / (2 * p.p.x));
 		p.i1.object = s;
-		p.i2.t = (-p.p.y + (1 / q_rsqrt(p.discriminant)) / (2 * p.p.x));
+		p.i2.t = (-p.p.y + sqrt(p.discriminant) / (2 * p.p.x));
 		p.i2.object = s;
 		xs = list_new_inter(p.i1);
 		ii = list_new_inter(p.i2);

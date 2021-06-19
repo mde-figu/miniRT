@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 21:45:39 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/17 23:06:47 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/18 22:33:49 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,8 @@ t_interl	*cyl_inter_aux(t_cyinter p, t_ray ray, t_capinter *c, t_object cyl)
 		}
 		return (c->xs);
 	}
-	p.t0 = (-p.b - (1 / q_rsqrt(p.discriminant))) / (2 * p.a);
-	p.t1 = (-p.b + (1 / q_rsqrt(p.discriminant))) / (2 * p.a);
+	p.t0 = (-p.b - sqrt(p.discriminant)) / (2 * p.a);
+	p.t1 = (-p.b + sqrt(p.discriminant)) / (2 * p.a);
 	aux_two(p, ray, c, cyl);
 	c->xs_cap = intersect_caps(cyl, ray);
 	return (ret);

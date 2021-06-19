@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 13:40:31 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/18 01:46:21 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/18 22:11:30 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,5 @@ t_tuple	place_normal(t_object o, t_tuple v)
 	world_normal.w = 0;
 	free_matrix(&m1);
 	free_matrix(&m2);
-	return (quake_normalize(world_normal));
+	return (tuple_normalize(world_normal));
 }

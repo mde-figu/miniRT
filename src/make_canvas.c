@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 19:44:33 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/17 18:06:15 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/18 19:30:29 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	make_canvas(t_initpara *initpara)
 	{
 		create_canvas(&canvas, initpara->res_x, initpara->res_y);
 		list_canvas(&initpara->canvas, canvas);
-		//free_canvas(canvas);
 	}
 	else
 	{
