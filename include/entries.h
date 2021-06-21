@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 14:23:16 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/18 21:08:11 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/21 11:57:29 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,6 +128,5 @@ t_color		shadding(t_initpara w, t_comps comp);
 int			readfile(t_initpara *initpara, char *argv[]);
 
 
-void		bubblesort(t_interl **xs);
 
 #endif
