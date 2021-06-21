@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 14:23:16 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/21 11:57:29 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/21 17:56:01 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,6 @@ t_object	sphere(void);
 t_object	cylinder(void);
 t_object	triangle(int id, t_tuple p1, t_tuple p2, t_tuple p3);
 
-
 t_color		list_color(t_initpara initpara, t_ray ray);
 t_interl	*intersect_world(t_initpara w, t_ray r);
 int			free_entry(char ***entry);
@@ -126,7 +125,6 @@ void		load_screen(t_initpara initpara);
 void		render(t_canvas *canvas, t_camera camera, t_initpara initpara);
 t_color		shadding(t_initpara w, t_comps comp);
 int			readfile(t_initpara *initpara, char *argv[]);
-
-
+void		loading_bar(double percent, int total, t_initpara initpara);
 
 #endif

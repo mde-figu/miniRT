@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 20:06:01 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/18 21:34:14 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/21 17:41:54 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ typedef struct s_world
 
 typedef struct s_camera
 {
+	int					index;
 	int					hsize;
 	int					vsize;
 	double				field_of_view;

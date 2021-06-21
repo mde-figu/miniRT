@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 17:37:29 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/15 19:43:02 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/21 16:06:53 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static t_interl	*ft_aux(t_object s, t_ray ray)
 	t_matrix	a;
 
 	xs = NULL;
-	if (ft_memcmp("plan", s.type, 5) == 0)
+	if (ft_memcmp("plane", s.type, 5) == 0)
 	{
 		a = inverse(s.transform);
 		local_ray = transform(ray, a);

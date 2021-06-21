@@ -1,0 +1,60 @@
+ERROR:.rt file is empty
+ERROR:Too few arguments!
+ERROR:Too many arguments!
+ERROR:.rt file is wrong or its data is corrupted
+ERROR:wrong spacing on second argument, check syntax
+
+
+
+
+ERROR:could not add tuple, W parameter is wrong
+ERROR:could not subtract tuple, W parameter is wrong
+ERROR:could not magnitude from tuple, W parameter is wrong
+ERROR:could not negate tuple, W parameter is wrong
+ERROR:could not scale tuple, W parameter is wrong
+
+
+
+
+
+ERROR:Invalid code in .rt file, use:R,A,c,l,pl,sp,sq,cy or tr
+ERROR:The resolution parameters must total 3: R Width Height
+ERROR:The resolution parameters Width and Height must be numbers
+ERROR:The ambient light must have 3 parameters: A, x size, y size
+ERROR:The parameters value for ambient light must be 0.0 ~ 1.0
+ERROR:Camera parameters must be four: c and its coordinates, x,y,z
+ERROR:Camera coordinate parameters are invalid
+ERROR:Camera normal vector parameters are invalid
+ERROR:Camera Field of View must be between 0.0 and 180.0
+ERROR:Lighting must have 4 parameters: l, x,y,z(coordinates), o (brightness) and RGB
+ERROR:Lighting coordinates invalid
+ERROR:Lighting brightness value must be between 0.0 and 1.0
+ERROR:Lighting color invalid
+ERROR:A Plane must have 4 parameters: pl, x,y,z (its coordinates), its normal and its RGB color
+ERROR:Plane has invalid coordinates
+ERROR:Plane has an invalid normal coordinate
+ERROR:Plane has an invalid color
+ERROR:Spheres must have 4 parameters: sp, its coordinates, its diameter, and its color
+ERROR:Sphere has an invalid coordinate
+ERROR:Sphere's third parameter, its diameter, must be a number
+ERROR:Sphere's diameter mustn't be negative
+ERROR:Sphere's color is invalid
+ERROR:Squares must have 5 parameters: sq, its coordinates, its norma, side size and color
+ERROR:Square's coordinates are invalid
+ERROR:Square's normal are invalid
+ERROR:Square's side must be a number
+ERROR:Square's side must be positive
+ERROR:Square's color is invalid
+ERROR:Cylinders mmust have 6 parameters: cy, its coordinates, its normal vector, its diameter, its height, and its color
+ERROR:Cylinder's diameter must be a positive number
+ERROR:Cylinder's diameter must be a number
+ERROR:Cylinder's color is invalid
+ERROR:Cylinder's normal vector is invalid
+ERROR:Cylinder's diameter must be a number
+ERROR:Triangles must contain 5 parameters: tr, its vertexes coordinates and its color
+ERROR:Triangle coordinates are invalid
+ERROR:Triangle color is invalid
+ERROR:Canvas error: A matrix is not invertible
+ERROR:No cameras defined
+ERROR:No objects defined
+ERROR:Error creating .bmp

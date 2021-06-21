@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 20:44:36 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/18 19:37:04 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/21 16:07:37 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static t_matrix	plane_posit(t_object *o, char *pos, char *col)
 	c.blue = (double)ft_atoi(tmp[2]);
 	m = translation(p.x, p.y, p.z);
 	o->material = mat_par();
-	o->material.color = scalar_color(c, 0.003921569);
+	o->material.color = create_color(c.red / 255, c.green / 255, c.blue / 255);
 	o->material.specular = 0;
 	return (m);
 }

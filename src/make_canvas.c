@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 19:44:33 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/18 19:30:29 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/21 18:22:57 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	make_canvas(t_initpara *initpara)
 		{
 			render(&canvas, cam->content, *initpara);
 			list_canvas(&initpara->canvas, canvas);
+			loading_bar(1.0, 10, *initpara);
 			cam = cam->next;
 		}
 		render(&canvas, cam->content, *initpara);
