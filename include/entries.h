@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 14:23:16 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/21 17:56:01 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/21 19:26:01 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,12 @@ typedef struct s_pixiter
 	int					xx;
 }						t_pixiter;
 
+typedef struct s_node
+{
+	int					data;
+	struct t_node		*next;
+}						t_node;
+
 void		splash(void);
 
 int			error_list(int error_nbr);
@@ -126,5 +132,6 @@ void		render(t_canvas *canvas, t_camera camera, t_initpara initpara);
 t_color		shadding(t_initpara w, t_comps comp);
 int			readfile(t_initpara *initpara, char *argv[]);
 void		loading_bar(double percent, int total, t_initpara initpara);
+void		mergesort(t_interl	**headref);
 
 #endif

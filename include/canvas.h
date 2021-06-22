@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 16:00:31 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/21 18:46:02 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/21 19:08:02 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ typedef struct s_intersect
 
 typedef struct s_interl
 {
-	t_intersect		content;
+	t_intersect			content;
 	struct s_interl		*next;
 }						t_interl;
 

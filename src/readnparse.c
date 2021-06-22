@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 12:09:58 by mirkios           #+#    #+#             */
-/*   Updated: 2021/06/18 19:44:26 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/21 22:33:05 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,5 @@ int	readfile(t_initpara *initpara, char *argv[])
 		}
 		l.ii = get_next_line(l.fd, &l.line);
 	}
-	return(ft_aux(l.line, initpara));
+	return (ft_aux(l.line, initpara));
 }

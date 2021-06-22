@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 17:28:04 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/21 18:39:59 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/21 19:48:48 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	loading_bar(double percent, int total, t_initpara initpara)
 	static int	counter;
 	char		*camera;
 
-	ten = total * 100;
+	ten = total * 10;
 	if (counter == 0)
 		ft_putstr_fd("Rendering... \n▒", 1);
 	if (counter == ten)

@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 21:58:39 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/21 11:58:19 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/21 20:45:31 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ t_intersect	ray_hit(t_interl *xs)
 	tmp = xs;
 	lenght = list_size_inter(xs);
 	it.valid = false;
+	//mergesort(&xs);
 	while (i < lenght)
 	{
 		if (tmp->content.t > 0)

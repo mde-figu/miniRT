@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 19:55:47 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/21 14:38:59 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/22 00:21:31 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	validate_line(char *line)
 	if (ret == 0)
 		ret = validate_geometry(entry_t);
 	if (ret == 0)
-		ret = error_list(20);
+		ret = error_list(11);
 	free_entry(&entry_t);
 	return (ret);
 }

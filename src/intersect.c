@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 17:37:29 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/21 16:06:53 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/21 20:47:28 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,6 @@ t_interl	*intersect(t_object s, t_ray ray)
 	}
 	else
 		xs = ft_aux(s, ray);
+	mergesort(&xs);
 	return (xs);
 }
