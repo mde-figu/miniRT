@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 14:55:01 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/22 00:16:53 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/22 16:32:57 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,18 @@ int	error_list(int error_nbr)
 	int		fdd;
 	int		i;
 
-	errstring = NULL;
 	filename = "misc/errors.txt";
 	fdd = open(filename, O_RDONLY);
 	i = 0;
 	while ((get_next_line(fdd, &errstring) == 1))
 	{
-		if (i - 6 == error_nbr)
-			break ;
+		if (ft_memcmp("E", &errstring[0], 1) == 0)
+		{
+			if (i == error_nbr)
+				break ;
+			i++;
+		}
 		free(errstring);
-		i++;
 	}
 	if (errstring)
 		ft_putstr_fd(errstring, 2);
