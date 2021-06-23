@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 13:29:37 by mirkios           #+#    #+#             */
-/*   Updated: 2021/06/22 00:30:04 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/23 13:53:02 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,18 +55,18 @@ int	validate_amb(char **entry_t)
 {
 	if (str_ptr_len(entry_t) != 3)
 	{
-		error_list(23);
+		error_list(13);
 		return (0);
 	}
 	if (!ft_isdigit(*entry_t[1]) || ft_atof(entry_t[1]) < 0
 		|| ft_atof(entry_t[1]) > 1)
 	{
-		error_list(24);
+		error_list(13);
 		return (0);
 	}
 	if (!amb_color(entry_t[2]))
 	{
-		error_list(24);
+		error_list(14);
 		return (0);
 	}
 	return (1);

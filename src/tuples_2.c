@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 18:43:18 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/18 22:02:35 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/23 18:01:35 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ double	tuple_mag(t_tuple t1)
 	double	tmp;
 
 	if (t1.w != 1 && t1.w != 0)
-		error_list(12);
+		error_list(9);
 	tmp = ((t1.x) * (t1.x)) + ((t1.y) * (t1.y)) + ((t1.z) * (t1.z));
 	magnitude = sqrt(tmp);
 	return (magnitude);

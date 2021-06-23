@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 18:43:25 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/18 18:35:32 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/23 18:01:19 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_tuple	add_tuple(t_tuple t1, t_tuple t2)
 	t_tuple	new;
 
 	if ((t1.w != 1 && t1.w != 0) || (t2.w != 1 && t2.w != 0))
-		error_list(10);
+		error_list(6);
 	new.x = t1.x + t2.x;
 	new.y = t1.y + t2.y;
 	new.z = t1.z + t2.z;
@@ -41,7 +41,7 @@ t_tuple	subtract_tuple(t_tuple t1, t_tuple t2)
 	t_tuple	new;
 
 	if ((t1.w != 1 && t1.w != 0) || (t2.w != 1 && t2.w != 0))
-		error_list(11);
+		error_list(7);
 	new.x = t1.x - t2.x;
 	new.y = t1.y - t2.y;
 	new.z = t1.z - t2.z;
@@ -54,7 +54,7 @@ t_tuple	negate_tuple(t_tuple t1)
 	t_tuple	new;
 
 	if (t1.w != 1 && t1.w != 0 && t1.w != -1)
-		error_list(13);
+		error_list(9);
 	new.x = t1.x * -1;
 	new.y = t1.y * -1;
 	new.z = t1.z * -1;
@@ -67,7 +67,7 @@ t_tuple	scale_tuple(t_tuple t1, double scale)
 	t_tuple	new;
 
 	if (t1.w != 1 && t1.w != 0)
-		error_list(14);
+		error_list(10);
 	new.x = t1.x * scale;
 	new.y = t1.y * scale;
 	new.z = t1.z * scale;

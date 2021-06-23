@@ -1,3 +1,4 @@
+
 ERROR:.rt file is empty.
 ERROR:Too few arguments!.
 ERROR:Too many arguments!.
@@ -36,7 +37,7 @@ ERROR:Square's normal are invalid
 ERROR:Square's side must be a number
 ERROR:Square's side must be positive
 ERROR:Square's color is invalid
-ERROR:Cylinders mmust have 6 parameters: cy, its coordinates, its normal vector, its diameter, its height, and its color
+ERROR:Cylinders must have 6 parameters: cy, its coordinates, its normal vector, its diameter, its height, and its color
 ERROR:Cylinder's diameter must be a positive number
 ERROR:Cylinder's diameter must be a number
 ERROR:Cylinder's color is invalid
