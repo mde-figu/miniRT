@@ -6,13 +6,13 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 17:28:04 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/21 19:48:48 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/23 18:23:31 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/entries.h"
 
-void	loading_bar(double percent, int total, t_initpara initpara)
+void	loading_bar(double percent, int total, int i)
 {
 	int			ten;
 	static int	counter;
@@ -29,7 +29,7 @@ void	loading_bar(double percent, int total, t_initpara initpara)
 	counter++;
 	if (percent == 1)
 	{
-		camera = ft_itoa(initpara.cams->content.index);
+		camera = ft_itoa(i);
 		ft_putstr_fd(" 100%\n", 1);
 		ft_putstr_fd("Camera ", 1);
 		ft_putstr_fd(camera, 1);

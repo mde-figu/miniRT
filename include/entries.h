@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 14:23:16 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/21 19:26:01 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/23 18:23:59 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,7 +131,7 @@ void		load_screen(t_initpara initpara);
 void		render(t_canvas *canvas, t_camera camera, t_initpara initpara);
 t_color		shadding(t_initpara w, t_comps comp);
 int			readfile(t_initpara *initpara, char *argv[]);
-void		loading_bar(double percent, int total, t_initpara initpara);
+void		loading_bar(double percent, int total, int i);
 void		mergesort(t_interl	**headref);
 
 #endif
