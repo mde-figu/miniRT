@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 20:44:36 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/21 16:07:37 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/24 19:39:48 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ static t_matrix	normal(char *normal)
 	t_matrix	a;
 
 	tmp = ft_split(normal, ',');
-	p.x = ft_atof(tmp[0]);
-	p.y = ft_atof(tmp[1]);
-	p.z = ft_atof(tmp[2]);
+	p.x = round(ft_atof(tmp[0]));
+	p.y = round(ft_atof(tmp[1]));
+	p.z = round(ft_atof(tmp[2]));
 	free_entry(&tmp);
 	a = rotate(create_tuple(p.x, p.y, p.z, 0));
 	return (a);
