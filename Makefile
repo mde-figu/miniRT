@@ -6,7 +6,7 @@
 #    By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/03 20:08:17 by mde-figu          #+#    #+#              #
-#    Updated: 2021/06/15 19:41:50 by mde-figu         ###   ########.fr        #
+#    Updated: 2021/06/25 19:01:36 by mde-figu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,7 @@ all: $(NAME)
 
 clean:
 	@make clean -C $(LIBFT_PATH)
+	@make clean -C $(GNL_PATH)
 	@rm -f $(OBJ_PATH)/*.o
 
 fclean:	clean

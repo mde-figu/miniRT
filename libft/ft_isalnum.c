@@ -6,19 +6,19 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 12:23:34 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 16:36:39 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/25 17:47:57 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
 	int	ret;
 
 	ret = 1;
-	if ((c >= 65 && c <= 90) ||
-		(c >= 97 && c <= 122))
+	if ((c >= 65 && c <= 90)
+		|| (c >= 97 && c <= 122))
 	{
 		ret = 1;
 	}

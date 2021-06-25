@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 20:04:29 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/06 21:55:03 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/25 17:03:23 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_cameras	*list_new_cam(t_camera content)
 	return (new);
 }
 
-int		list_size_cam(t_cameras *lst)
+int	list_size_cam(t_cameras *lst)
 {
 	int			i;
 	t_cameras	*temp;

@@ -6,13 +6,13 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 13:34:26 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/17 16:26:32 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/25 18:34:17 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/entries.h"
 
-static t_matrix posit_sq(t_object *o, char *pos, char *col, char *size)
+static t_matrix	posit_sq(t_object *o, char *pos, char *col, char *size)
 {
 	char		**tmp;
 	t_tuple		p;
@@ -52,7 +52,7 @@ static	t_tuple	normal(t_object *o, char *normal)
 	return (p);
 }
 
-void	config_sq(t_initpara *initpara, char *pos, char *n, char *s, char *col)
+void	config_sq(t_initpara *initpara, char **entry)
 {
 	t_object	o;
 	t_matrix	c;
@@ -61,8 +61,8 @@ void	config_sq(t_initpara *initpara, char *pos, char *n, char *s, char *col)
 	t_tuple		po;
 
 	o = square();
-	c = posit_sq(&o, pos, col, s);
-	po = normal(&o, n);
+	c = posit_sq(&o, entry[1], entry[4], entry[3]);
+	po = normal(&o, entry[2]);
 	a = rotate(create_tuple(po.x, po.y, po.z, 0));
 	d = matrix_multi(a, c);
 	copy_matrix(&o.transform, d);

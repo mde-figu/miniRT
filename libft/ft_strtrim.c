@@ -6,15 +6,15 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 11:34:19 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/22 14:12:53 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/25 17:56:59 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t i;
+	size_t	i;
 
 	if (!s1 || !set)
 		return (0);

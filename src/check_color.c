@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 18:21:38 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/07 23:35:17 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/25 17:02:46 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	check_color(char *str)
 	cc.blue = (float)ft_atoi(tmp[2]);
 	if (cc.red < 0 || cc.red > 255 || cc.green < 0 || cc.green > 255
 		|| cc.blue < 0 || cc.blue > 255)
-		return(free_entry(&tmp));
+		return (free_entry(&tmp));
 	free_entry(&tmp);
 	return (1);
 }

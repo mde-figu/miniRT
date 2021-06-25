@@ -6,15 +6,15 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 17:59:58 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 00:49:47 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/25 17:55:00 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != 0)

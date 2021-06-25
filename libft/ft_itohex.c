@@ -6,13 +6,13 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 23:01:14 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/03/18 23:01:27 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/25 17:56:26 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char			convert_hex(int i)
+static char	convert_hex(int i)
 {
 	if (i == 10)
 		return ('a');
@@ -36,7 +36,7 @@ static long long	negative_tratament(long long n, size_t uint_max)
 	return (n);
 }
 
-char				*ft_int_to_hex(long long n)
+char	*ft_int_to_hex(long long n)
 {
 	char	*c;
 	char	*str;

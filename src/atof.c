@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/30 20:14:56 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/17 20:45:18 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/25 18:47:37 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ double	ft_atof(char *str)
 	t_atofpar	atofpar;
 
 	atofinit(&atofpar);
-	while ((atofpar.c = *(str + atofpar.i)) !='\0')
+	atofpar.c = *(str + atofpar.i);
+	while (atofpar.c != '\0')
 	{
 		if (atofpar.c == '-')
 			atofpar.minus = -1;
@@ -43,6 +44,7 @@ double	ft_atof(char *str)
 			atofpar.flag = 1;
 		}
 		++atofpar.i;
+		atofpar.c = *(str + atofpar.i);
 	}
 	atofpar.val = atofpar.val * ft_pow(10, atofpar.j);
 	return (atofpar.val * atofpar.minus);

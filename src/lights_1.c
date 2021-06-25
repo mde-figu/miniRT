@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 13:34:15 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/18 22:14:18 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/25 17:01:39 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static void	ft_aux(t_reflexpar *q, t_colcomp *p, double *light_dot_normal,
 t_color	lighting(t_colcomp p)
 {
 	t_reflexpar	q;
-	double	light_dot_normal;
+	double		light_dot_normal;
 	t_reflex	y;
 
 	ft_int(&q, p, &light_dot_normal);

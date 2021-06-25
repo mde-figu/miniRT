@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 17:37:29 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/25 00:57:02 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/25 16:47:33 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,7 @@ t_interl	*intersect(t_object s, t_ray ray)
 
 	xs = NULL;
 	if (ft_memcmp("sphere", s.type, 7) == 0)
-	{
-		a = inverse(s.transform);
-		local_ray = transform(ray, a);
 		xs = intersect_sphere(s, ray);
-	}
 	else if (ft_memcmp("cylinder", s.type, 9) == 0)
 	{
 		a = inverse(s.transform);

@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:40:55 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/17 16:28:15 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/25 16:34:35 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	is_num(char *str)
 {
-	int i;
+	int	i;
 
 	if (!(str[0] == '-' || ft_isdigit(str[0])))
 		return (0);
@@ -48,9 +48,9 @@ int	check_normal(char *str)
 		return (free_entry(&tmp));
 	if (!(is_num(tmp[0]) || is_num(tmp[1]) || is_num(tmp[2])))
 		return (free_entry(&tmp));
-	t.x = ft_atof(tmp[0]);
-	t.y = ft_atof(tmp[1]);
-	t.z = ft_atof(tmp[2]);
+	t.x = (ft_atof(tmp[0]));
+	t.y = (ft_atof(tmp[1]));
+	t.z = (ft_atof(tmp[2]));
 	if (!is_unit(t.x, t.y, t.z))
 		return (free_entry(&tmp));
 	free_entry(&tmp);

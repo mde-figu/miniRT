@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 12:42:01 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/17 16:25:19 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/25 16:56:42 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	config_lig(t_initpara *initpara, char *ps, char *br, char *col)
 	c.green = (double)ft_atoi(tmp2[1]);
 	c.blue = (double)ft_atoi(tmp2[2]);
 	light(&initpara->lighting, point_light(create_tuple(p.x, p.y, p.z, 1),
-				scalar_color(scalar_color(c, 0.003921569), b)));
+			scalar_color(scalar_color(c, 0.003921569), b)));
 	free_entry(&tmp1);
 	free_entry(&tmp2);
 }

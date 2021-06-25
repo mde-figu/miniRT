@@ -6,16 +6,16 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 20:36:34 by mirkios           #+#    #+#             */
-/*   Updated: 2021/02/19 19:38:54 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/25 17:36:58 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned char c;
-	unsigned char d;
+	unsigned char	c;
+	unsigned char	d;
 
 	if (n == 0)
 		return (0);

@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 19:51:41 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/17 16:24:59 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/25 18:44:58 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ void	config_cy(t_initpara *initpara, char **entry_t)
 	t_matrix	d;
 	t_matrix	c;
 	t_obj_par	p;
-	float		s;
 
 	p.position = entry_t[1];
 	p.normal = entry_t[2];
@@ -81,8 +80,7 @@ void	config_cy(t_initpara *initpara, char **entry_t)
 	free_matrix(&a);
 	free_matrix(&c);
 	free_matrix(&d);
-	s = ft_atof(p.height);
-	o.maximum = s;
+	o.maximum = ft_atof(p.height);
 	o.closed = true;
 	list_obj(&initpara->objects, o);
 }

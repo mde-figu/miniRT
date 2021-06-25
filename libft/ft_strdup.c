@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 13:16:05 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 20:24:53 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/25 17:34:58 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ char	*ft_strdup(const char *s)
 	char	*dest;
 
 	len = ft_strlen(s);
-	if (!(dest = (char*)malloc((len + 1) * sizeof(char))))
+	dest = (char *)malloc((len + 1) * sizeof(char));
+	if (!(dest))
 		return (NULL);
 	ft_strlcpy(dest, s, (len + 1));
 	return (dest);

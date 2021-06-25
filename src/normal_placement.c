@@ -6,13 +6,13 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 13:40:31 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/18 22:11:30 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/25 17:05:31 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/entries.h"
 
-t_tuple normal_placement(t_object o, t_tuple point)
+t_tuple	normal_placement(t_object o, t_tuple point)
 {
 	t_tuple		normal;
 	double		dist;

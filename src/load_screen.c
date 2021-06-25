@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 16:55:20 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/18 21:10:08 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/25 16:48:22 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,8 @@ void	load_screen(t_initpara initpara)
 		save(initpara);
 	else
 	{
-		initpara.win = mlx_new_window(initpara.mlx, initpara.res_x, initpara.res_y, "miniRT");
+		initpara.win = mlx_new_window(initpara.mlx, initpara.res_x,
+				initpara.res_y, "miniRT");
 		mlx_hook(initpara.win, 33, 1L << 17, closew, &initpara);
 		mlx_hook(initpara.win, 2, 1, next_cam, &initpara);
 		mlx_expose_hook(initpara.win, expose_hook, &initpara);

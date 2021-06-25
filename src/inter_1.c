@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 12:55:33 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/25 01:34:00 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/25 17:01:21 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ t_interl	*intersect_square(t_object p, t_ray ray)
 	t = -ray.origin.y / ray .direction.y;
 	if (t > 0)
 	{
-		point = subtract_tuple(add_tuple(ray.origin, scale_tuple(ray.direction, t)), p.center);
+		point = subtract_tuple(add_tuple(ray.origin,
+					scale_tuple(ray.direction, t)), p.center);
 		border = p.side * 0.5;
 		if ((fabs(point.x) <= border) && (fabs(point.y)
 				<= border) && (fabs(point.z) <= border))
@@ -68,7 +69,7 @@ t_interl	*intersect_triangle(t_object triangle, t_ray ray)
 	t_tuple		dir_cross_e2;
 	t_tuple		p1_to_origin;
 	t_tuple		origin_cross_e1;
-	t_interl		*xs;
+	t_interl	*xs;
 	t_trinter	p;
 
 	xs = NULL;

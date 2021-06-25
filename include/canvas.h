@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 16:00:31 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/25 00:24:29 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/25 16:46:32 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,9 @@ typedef struct s_data
 
 typedef struct s_imgg
 {
-	t_data		content;
-	struct	s_imgg *next;
-}				t_imgg;
+	t_data			content;
+	struct s_imgg	*next;
+}					t_imgg;
 
 typedef struct s_canvas
 {
@@ -181,7 +181,7 @@ t_interl			*intersect_triangle(t_object triangle, t_ray ray);
 t_interl			*intersect_sphere(t_object s, t_ray ray);
 t_interl			*intersect_cylinder(t_object cyl, t_ray ray);
 t_interl			*cyl_inter_aux(t_cyinter p, t_ray ray, t_capinter *c,
-					t_object cy1);
+						t_object cy1);
 t_interl			*intersect_caps(t_object cyl, t_ray ray);
 t_comps				pre_comp(t_intersect i, t_ray r);
 void				list_clear_inter(t_interl **lst);

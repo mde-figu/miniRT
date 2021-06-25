@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 21:32:59 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/10 18:20:36 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/25 16:50:54 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	list_clear_inter(t_interl **lst)
 
 int	list_size_inter(t_interl *lst)
 {
-	int		i;
+	int			i;
 	t_interl	*temp;
 
 	if (lst)

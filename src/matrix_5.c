@@ -6,13 +6,13 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 13:34:01 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/10 14:19:51 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/25 17:06:56 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/entries.h"
 
-static void init(double *v, double *v1, double *v2, t_tuple normal)
+static void	init(double *v, double *v1, double *v2, t_tuple normal)
 {
 	double	angle;
 

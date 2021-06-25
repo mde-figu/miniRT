@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 12:25:14 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/18 20:14:40 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/25 17:00:32 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ void	arrange_pixels(t_data *data, int x, int y, int color)
 {
 	char	*dst;
 
-	dst = data->address + (y * data->line_length + x * (data->bits_per_pixel / 8));
+	dst = data->address + (y * data->line_length + x
+			* (data->bits_per_pixel / 8));
 	*(unsigned int *)dst = color;
 }
 

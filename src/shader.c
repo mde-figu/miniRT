@@ -6,13 +6,13 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/27 14:29:06 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/24 19:47:36 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/25 18:41:05 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/entries.h"
 
-bool	the_shadow_knows(t_light light, t_initpara w, t_tuple point)
+bool	shadow(t_light light, t_initpara w, t_tuple point)
 {
 	t_tuple			v;
 	t_raypara		p;
@@ -48,7 +48,7 @@ static t_color	color_mix(t_light l, t_colcomp *i, t_color c2, t_shadepar p)
 {
 	t_color		c1;
 
-	p.shadowed = the_shadow_knows(l, p.world, p.comps.over_point);
+	p.shadowed = shadow(l, p.world, p.comps.over_point);
 	ft_init(i, p.world, p.comps, l);
 	i->in_shadow = p.shadowed;
 	c1 = lighting(*i);
@@ -56,7 +56,7 @@ static t_color	color_mix(t_light l, t_colcomp *i, t_color c2, t_shadepar p)
 	return (c2);
 }
 
-t_color		shadding(t_initpara initpara, t_comps comp)
+t_color	shadding(t_initpara initpara, t_comps comp)
 {
 	t_lights	*tmp;
 	t_shadepar	p;
@@ -70,7 +70,7 @@ t_color		shadding(t_initpara initpara, t_comps comp)
 	{
 		while (tmp->next)
 		{
-			p.shadowed = the_shadow_knows(tmp->content, initpara, comp.over_point);
+			p.shadowed = shadow(tmp->content, initpara, comp.over_point);
 			ft_init(&i, initpara, comp, tmp->content);
 			i.in_shadow = p.shadowed;
 			c.c1 = lighting(i);
@@ -79,8 +79,7 @@ t_color		shadding(t_initpara initpara, t_comps comp)
 		}
 		p.world = initpara;
 		p.comps = comp;
-		c.c2 = color_mix(tmp->content, &i, c.c2, p);
-		return (c.c2);
+		return (c.c2 = color_mix(tmp->content, &i, c.c2, p));
 	}
 	else
 		return (initpara.ambient);

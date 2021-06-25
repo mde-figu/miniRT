@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mirkios <mirkios@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 19:23:25 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/20 18:27:09 by mirkios          ###   ########.fr       */
+/*   Updated: 2021/06/25 17:56:09 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ static int	iswhtspc(char str)
 	return (0);
 }
 
-int			ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	int i;
-	int j;
-	int sign;
+	int	i;
+	int	j;
+	int	sign;
 
 	i = 0;
 	j = 0;

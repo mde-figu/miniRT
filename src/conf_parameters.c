@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 00:47:50 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/18 23:09:29 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/25 18:58:13 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,10 @@ void	conf_parameters(t_initpara **initpara, char *line)
 	if (ft_memcmp("sp", entry_t[0], 3) == 0)
 		config_sp(*initpara, entry_t[1], entry_t[2], entry_t[3]);
 	if (ft_memcmp("sq", entry_t[0], 3) == 0)
-		config_sq(*initpara, entry_t[1], entry_t[2], entry_t[3], entry_t[4]);
+		config_sq(*initpara, entry_t);
 	if (ft_memcmp("tr", entry_t[0], 3) == 0)
 		config_tr(*initpara, entry_t);
 	if (ft_memcmp("cy", entry_t[0], 3) == 0)
 		config_cy(*initpara, entry_t);
 	free_entry(&entry_t);
 }
-/* quando passo entry_t[1] estou mandando um vetor do array, recebo com 
-*entry_t quando passo soh entry_t estou mandando o array todo, recebo com 
-**entry_t e la dentro uso entry[1]*/

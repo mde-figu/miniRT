@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 23:58:57 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/19 20:18:11 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/25 17:58:34 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
-	if (!(jointstr = (char*)malloc((len1 + len2 + 1) * sizeof(char))))
+	jointstr = (char *)malloc((len1 + len2 + 1) * sizeof(char));
+	if (!(jointstr))
 		return (NULL);
 	i = 0;
 	while (i < len1)

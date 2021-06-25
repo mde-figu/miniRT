@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 13:02:52 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/02/22 14:39:51 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/25 17:47:33 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,14 @@ static size_t	wordcounter(char const *s, char c)
 	return (total);
 }
 
-static char		*nextword(char const *s, char c)
+static char	*nextword(char const *s, char c)
 {
 	while (*s && *s == c)
 		s = s + 1;
-	return ((char*)s);
+	return ((char *)s);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**retstr;
 	size_t	i;
@@ -58,7 +58,8 @@ char			**ft_split(char const *s, char c)
 	if (s != NULL)
 	{
 		words = wordcounter(s, c);
-		if (!(retstr = (char**)malloc(sizeof(char*) * (words + 1))))
+		retstr = (char **)malloc(sizeof(char *) * (words + 1));
+		if (!(retstr))
 			return (NULL);
 		i = 0;
 		while (i < words)

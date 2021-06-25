@@ -6,15 +6,15 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 20:26:12 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/03 20:27:47 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/25 17:04:58 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/entries.h"
 
-int		str_ptr_len(char **s)
+int	str_ptr_len(char **s)
 {
-	int len;
+	int	len;
 
 	if (!s)
 		return (0);

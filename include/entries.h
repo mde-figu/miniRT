@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 14:23:16 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/24 19:49:36 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/25 18:31:15 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,8 +100,7 @@ void		config_cy(t_initpara *initpara, char **entry_t);
 void		config_lig(t_initpara *initpara, char *ps, char *br, char *col);
 void		config_pl(t_initpara *initpara, char *pos, char *n, char *col);
 void		config_sp(t_initpara *initpara, char *pos, char *dia, char *col);
-void		config_sq(t_initpara *initpara, char *pos, char *n,
-				char *s, char *col);
+void		config_sq(t_initpara *initpara, char **entry_t);
 void		config_tr(t_initpara *initpara, char **entry_t);
 
 int			check_coordinate(char *str);
