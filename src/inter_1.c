@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 12:55:33 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/18 01:58:35 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/25 01:34:00 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_intersect	intersection(double t, t_object o)
 {
-	t_intersect i;
+	t_intersect	i;
 
 	i.t = t;
 	i.object = o;

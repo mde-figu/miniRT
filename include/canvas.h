@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 16:00:31 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/21 19:08:02 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/25 00:24:29 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,13 +90,13 @@ typedef struct s_beamoffset
 	t_ray				r;
 	double				xoffset;
 	double				yoffset;
-	double				world_x;
-	double				world_y;
+	float				world_x;
+	float				world_y;
 }						t_beamoffset;
 
 typedef struct s_intersect
 {
-	double				t;
+	float				t;
 	t_object			object;
 	bool				valid;
 }						t_intersect;

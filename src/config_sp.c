@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 13:57:03 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/17 20:12:16 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/25 14:01:21 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ static	t_matrix	position(char *pos, double r)
 	t_tuple		p;
 
 	tmp = ft_split(pos, ',');
-	p.x = ft_atof(tmp[0]);
-	p.y = ft_atof(tmp[1]);
-	p.z = ft_atof(tmp[2]);
+	p.x = round(ft_atof(tmp[0]));
+	p.y = round(ft_atof(tmp[1]));
+	p.z = round(ft_atof(tmp[2]));
 	free_entry(&tmp);
 	a = translation(p.x, p.y, p.z);
 	b = scaling(r, r, r);

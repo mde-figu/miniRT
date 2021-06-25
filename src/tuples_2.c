@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 18:43:18 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/24 19:27:13 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/24 19:46:48 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ double	tuple_rsqrt(t_tuple t1)
 	double		number;
 	const float	threehalfs = 1.5F;
 
-	number = ((t1.x) * (t1.x)) + ((t1.y) * (t1.y)) + ((t1.z) * (t1.z)) + ((t1.w) * (t1.w));
+	number = t1.x * t1.x + t1.y * t1.y + t1.z * t1.z + t1.w * t1.w;
 	x2 = number * 0.5F;
 	y = number;
 	i = *(long *) &y;

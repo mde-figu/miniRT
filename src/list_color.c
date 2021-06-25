@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 12:53:58 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/21 20:58:43 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/24 20:00:27 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,16 @@ t_interl	*world_intersect(t_initpara w, t_ray r)
 		init = intersect(tmp->content, r);
 		if (init != NULL)
 		{
-			mergesort(&init);
 			if (xs == NULL)
 				xs = init;
 			else
 				list_addback_inter(&xs, init);
-			mergesort(&xs);
 		}
 		tmp = tmp->next;
 	}
 	init = intersect(tmp->content, r);
-	mergesort(&init);
 	check_xs(&xs, init);
+	mergesort(&xs);
 	return (xs);
 }
 
@@ -60,7 +58,6 @@ t_color	list_color(t_initpara initpara, t_ray ray)
 	t_comps		comps;
 
 	wwl = world_intersect(initpara, ray);
-	mergesort(&wwl);
 	in = ray_hit(wwl);
 	if (wwl != NULL)
 		list_clear_inter(&wwl);

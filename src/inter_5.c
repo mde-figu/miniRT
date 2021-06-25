@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 22:15:33 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/21 20:23:17 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/24 19:51:13 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,43 +51,5 @@ t_interl	*intersect_caps(t_object cyl, t_ray ray)
 		else
 			xs = list_new_inter(i1);
 	}
-	return (xs);
-}
-
-static void	aux(t_interl **xs, t_interl *init)
-{
-	if (init != NULL)
-	{
-		if (*xs == NULL)
-			*xs = init;
-		else
-			list_addback_inter(&*xs, init);
-	}
-}
-
-t_interl	*intersect_world(t_initpara w, t_ray r)
-{
-	t_interl		*xs;
-	t_interl		*ini;
-	t_objects		*tmp;
-
-	xs = NULL;
-	ini = NULL;
-	tmp = w.world_objects;
-	while (tmp->next)
-	{
-		ini = intersect(tmp->content, r);
-		if (ini != NULL)
-		{
-			if (xs == NULL)
-				xs = ini;
-			else
-				list_addback_inter(&xs, ini);
-		}
-		tmp = tmp->next;
-	}
-	ini = intersect(tmp->content, r);
-	//mergesort(&xs);
-	aux(&xs, ini);
 	return (xs);
 }
