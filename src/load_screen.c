@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 16:55:20 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/25 16:48:22 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/26 03:59:46 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,9 @@ void	load_screen(t_initpara initpara)
 {
 	initpara.mlx = mlx_init();
 	if (initpara.cams == NULL)
-		error_list(58);
+		printf("No cameras defined\n");
 	if (initpara.objects == NULL)
-		error_list(59);
+		printf("No objects defined\n");
 	image(&initpara);
 	if (initpara.save == 1)
 		save(initpara);
