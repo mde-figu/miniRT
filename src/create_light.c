@@ -6,7 +6,7 @@
 /*   By: mde-figu <mde-figu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 23:56:35 by mde-figu          #+#    #+#             */
-/*   Updated: 2021/06/25 17:23:50 by mde-figu         ###   ########.fr       */
+/*   Updated: 2021/06/25 20:37:25 by mde-figu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	create_light(t_initpara *initpara, t_light light)
 {
 	t_lights	*tmp;
 
-	initpara->lightonoff = 1;
+	initpara->lightonoff = true;
 	if (list_size_lig(initpara->world_lights) == 0)
 	{
 		initpara->world_lights = list_new_lig(light);
