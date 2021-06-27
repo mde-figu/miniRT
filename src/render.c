@@ -24,7 +24,7 @@ void	render(t_canvas *canvas, t_camera camera, t_initpara initpara)
 	while (y < camera.vsize - 1)
 	{
 		x = 0;
-		while (x <camera.hsize - 1)
+		while (x < camera.hsize - 1)
 		{
 			ray = ray_to_pixel(camera, x, y);
 			color = list_color(initpara, ray);

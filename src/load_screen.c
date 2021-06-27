@@ -23,7 +23,7 @@ static int	next_cam(int keycode, t_initpara *initpara)
 {
 	if (keycode == 0xFF1B)
 		exit(0);
-	if (keycode !=0x20)
+	if (keycode != 0x20)
 		return (0);
 	if (initpara->img->next)
 	{

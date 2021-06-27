@@ -21,7 +21,6 @@ int	main(int argc, char *argv[])
 		exit (0);
 	if (!readfile(&initpara, argv))
 		exit (0);
-	//intro goes here
 	if (initpara.objects != NULL)
 		set_world(&initpara);
 	make_canvas(&initpara);
